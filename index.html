@@ -1,96 +1,1173 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
-</html>
+<title>NHPA: Two Standards of Review</title>
+<style>
+  :root {
+    --page: #f7f7f4;
+    --surface: #fcfcfb;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --grid: #e1e0d9;
+    --axis: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --clean: #2a78d6;
+    --gas: #eb6834;
+    --clean-wash: rgba(42,120,214,0.10);
+    --gas-wash: rgba(235,104,52,0.12);
+    --chip-bg: rgba(11,11,11,0.05);
+    --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --ink: #ffffff;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --grid: #2c2c2a;
+      --axis: #383835;
+      --border: rgba(255,255,255,0.10);
+      --clean: #3987e5;
+      --gas: #d95926;
+      --clean-wash: rgba(57,135,229,0.16);
+      --gas-wash: rgba(217,89,38,0.18);
+      --chip-bg: rgba(255,255,255,0.07);
+    }
+  }
+  :root[data-theme="dark"] {
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7;
+    --muted: #898781; --grid: #2c2c2a; --axis: #383835;
+    --border: rgba(255,255,255,0.10);
+    --clean: #3987e5; --gas: #d95926;
+    --clean-wash: rgba(57,135,229,0.16); --gas-wash: rgba(217,89,38,0.18);
+    --chip-bg: rgba(255,255,255,0.07);
+  }
+  :root[data-theme="light"] {
+    --page: #f7f7f4; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e;
+    --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --clean: #2a78d6; --gas: #eb6834;
+    --clean-wash: rgba(42,120,214,0.10); --gas-wash: rgba(235,104,52,0.12);
+    --chip-bg: rgba(11,11,11,0.05);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+  .prose { max-width: 68ch; }
+
+  /* ---------- Hero ---------- */
+  header { padding: 72px 0 40px; }
+  .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 18px;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(34px, 5.4vw, 54px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+    max-width: 21ch;
+  }
+  h1 .hl-clean { color: var(--clean); }
+  h1 .hl-gas { color: var(--gas); }
+  .dek { font-size: 18.5px; color: var(--ink-2); max-width: 62ch; margin: 0; }
+  .dek strong { color: var(--ink); font-weight: 600; }
+
+  .tiles { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px 20px 14px; flex: 1 1 220px; min-width: 200px;
+  }
+  .tile .t-label { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
+  .tile .t-value { font-size: 34px; font-weight: 600; line-height: 1.1; }
+  .tile .t-sub { font-size: 12.5px; color: var(--ink-2); margin-top: 4px; }
+  .tile .t-value .unit { font-size: 18px; font-weight: 500; color: var(--ink-2); }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: baseline; }
+  .dot.c { background: var(--clean); } .dot.g { background: var(--gas); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 34px 0; }
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400; font-size: 29px; line-height: 1.2;
+    margin: 0 0 10px; text-wrap: balance;
+  }
+  .section-note { color: var(--ink-2); max-width: 68ch; margin: 0 0 22px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 22px 24px 18px;
+  }
+  .card h3 { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
+  .card .sub { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+  .scrollx { overflow-x: auto; }
+  figcaption, .caption { font-size: 12.5px; color: var(--muted); margin-top: 10px; max-width: 78ch; }
+  figure { margin: 0; }
+
+  .legend { display: flex; gap: 18px; align-items: center; font-size: 13px; color: var(--ink-2); margin: 0 0 12px; flex-wrap: wrap; }
+  .legend .key { display: inline-flex; align-items: center; gap: 7px; }
+  .swatch { width: 14px; height: 10px; border-radius: 2px; display: inline-block; }
+  .swatch.c { background: var(--clean); } .swatch.g { background: var(--gas); }
+
+  /* ---------- Segmented control ---------- */
+  .seg {
+    display: inline-flex; gap: 0; border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden; margin: 0 0 18px; background: var(--surface);
+  }
+  .seg button {
+    appearance: none; border: 0; background: transparent; color: var(--ink-2);
+    font: inherit; font-size: 13.5px; font-weight: 500; padding: 8px 16px; cursor: pointer;
+  }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button[aria-pressed="true"] { background: var(--chip-bg); color: var(--ink); font-weight: 600; }
+  .seg button:focus-visible { outline: 2px solid var(--clean); outline-offset: -2px; }
+
+  /* ---------- SVG chart chrome ---------- */
+  svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .bar-hit { fill: transparent; cursor: default; }
+  .bar-hit:focus-visible { outline: none; }
+  .bar-hit:focus-visible + .bar-mark, .row-hover .bar-mark { filter: brightness(1.12); }
+  .tick-label { font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+  .row-label { font-size: 12px; fill: var(--ink-2); }
+  .val-label { font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+
+  /* ---------- Tooltip ---------- */
+  #tip {
+    position: fixed; z-index: 50; pointer-events: none; display: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+    padding: 10px 13px; max-width: 320px; font-size: 12.5px; line-height: 1.45;
+  }
+  #tip .tp-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; display: flex; align-items: center; gap: 7px; }
+  #tip .tp-key { width: 12px; height: 3px; border-radius: 2px; flex: 0 0 auto; }
+  #tip .tp-type { color: var(--muted); margin-bottom: 6px; }
+  #tip .tp-row { color: var(--ink-2); margin-top: 4px; }
+  #tip .tp-row b { color: var(--ink); font-weight: 600; }
+  #tip .tp-src { color: var(--muted); font-size: 11.5px; margin-top: 7px; border-top: 1px solid var(--grid); padding-top: 6px; }
+
+  /* ---------- Table ---------- */
+  .filters { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .chip {
+    appearance: none; border: 1px solid var(--border); background: var(--surface);
+    color: var(--ink-2); font: inherit; font-size: 13px; font-weight: 500;
+    border-radius: 999px; padding: 5px 14px; cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { background: var(--chip-bg); color: var(--ink); font-weight: 600; border-color: var(--axis); }
+  .chip:focus-visible { outline: 2px solid var(--clean); outline-offset: 1px; }
+  .search {
+    font: inherit; font-size: 13.5px; color: var(--ink);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 7px 12px; min-width: 220px; flex: 1 1 220px; max-width: 320px;
+  }
+  .search:focus-visible { outline: 2px solid var(--clean); outline-offset: 0; }
+  .count-note { font-size: 12.5px; color: var(--muted); margin-left: auto; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  thead th {
+    text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); font-weight: 600; padding: 8px 12px 8px 0;
+    border-bottom: 1px solid var(--axis); white-space: nowrap;
+  }
+  tbody td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--grid); vertical-align: top; color: var(--ink-2); }
+  tbody td:first-child { color: var(--ink); font-weight: 550; min-width: 180px; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .src-cell { font-size: 11.5px; color: var(--muted); max-width: 230px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; white-space: nowrap; }
+  .pill .pd { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
+
+  /* ---------- Methodology ---------- */
+  .method h3 { font-size: 15.5px; font-weight: 600; margin: 22px 0 6px; }
+  .method p, .method li { color: var(--ink-2); font-size: 14.5px; }
+  .method .rule {
+    border-left: 3px solid var(--axis); padding: 2px 0 2px 16px; margin: 14px 0;
+    color: var(--ink-2); font-size: 14.5px;
+  }
+  footer { padding: 28px 0 64px; color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--grid); margin-top: 30px; }
+
+  /* ---------- Breakdown mini-table ---------- */
+  .mini { font-size: 13px; margin-top: 16px; }
+  .mini td, .mini th { padding: 6px 14px 6px 0; }
+
+  a { color: var(--clean); }
+  @media (prefers-reduced-motion: no-preference) {
+    .bar-mark { transition: filter 120ms ease; }
+    .chip, .seg button { transition: background 120ms ease; }
+  }
+  @media (max-width: 640px) {
+    header { padding-top: 48px; }
+    .card { padding: 16px 14px 12px; }
+  }
+</style>
+
+<div id="tip" role="status" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">NHPA Differential Treatment · Pilot Dataset · 60 Federal Energy Approvals</p>
+    <h1>A <span class="hl-clean">40&#8209;mile</span> circle for wind. A <span class="hl-gas">half&#8209;mile</span> circle for gas.</h1>
+    <p class="dek">Before approving a project, federal agencies must define an <strong>area of potential effects</strong> (APE) — the zone in which historic properties are identified and impacts reviewed under Section&nbsp;106 of the National Historic Preservation Act. In this pilot dataset of 60 recent energy approvals, reviewers drew far wider circles around clean energy projects than around natural gas infrastructure — and clean projects almost always exited review carrying mitigation obligations, while gas projects almost never did.</p>
+    <div class="tiles">
+      <div class="tile">
+        <div class="t-label"><span class="dot c"></span>Median visual APE — offshore wind</div>
+        <div class="t-value">40 <span class="unit">miles</span></div>
+        <div class="t-sub">viewshed radius, 8 projects with a stated figure</div>
+      </div>
+      <div class="tile">
+        <div class="t-label"><span class="dot g"></span>Median indirect APE — gas &amp; LNG</div>
+        <div class="t-value">0.5 <span class="unit">miles</span></div>
+        <div class="t-sub">around aboveground facilities, 20 projects with a stated figure</div>
+      </div>
+      <div class="tile">
+        <div class="t-label">Review area implied by those radii</div>
+        <div class="t-value">6,400×</div>
+        <div class="t-sub">≈5,000 sq mi vs ≈0.8 sq mi per project</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>The circles, drawn to scale</h2>
+    <p class="section-note">Each ring is the median indirect (visual) APE distance for a project category, drawn to a common scale around a single project site. A 40-mile viewshed covers about 5,000 square miles — larger than Los Angeles County. A half-mile buffer covers 0.8 square miles — about three-fifths of Central Park.</p>
+    <figure class="card">
+      <div class="scrollx" id="circles-holder"></div>
+      <figcaption>Median stated indirect/visual APE distance by category. Onshore wind is a single project (Lava Ridge), whose non-physical APE was a 20-mile-wide corridor — shown as its 10-mile half-width. Categories with no stated distance are excluded; see the project table for every record.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Every project with a stated distance</h2>
+    <p class="section-note">All 38 projects whose public Section 106 or NEPA documents state an indirect or visual APE distance, ranked. The pattern is not subtle: every figure above 2 miles belongs to a clean energy project, with one exception — Rio Grande LNG's 12-mile figure, which its EIS describes as an indirect <em>study area</em> rather than a defined APE.</p>
+    <figure class="card">
+      <div class="legend">
+        <span class="key"><span class="swatch c"></span>Clean energy (wind, solar, transmission)</span>
+        <span class="key"><span class="swatch g"></span>Natural gas &amp; LNG</span>
+      </div>
+      <div class="scrollx" id="ledger-holder"></div>
+      <figcaption>Indirect/visual APE distance in statute miles, as stated in each project's public documents (corridor widths shown as half-width from centerline). 22 additional projects define no single public distance — including six clean projects with multi-part APEs (e.g., Vineyard Wind 1) and 16 gas projects with none stated. Hover or tab to any bar for details; every value also appears in the table below.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Three ways to cut it</h2>
+    <p class="section-note">Toggle between the review's geographic reach, the acreage agencies actually surveyed, and how each review ended.</p>
+    <div class="seg" role="group" aria-label="Chart view">
+      <button type="button" data-mode="reach" aria-pressed="true">Visual reach by category</button>
+      <button type="button" data-mode="acres" aria-pressed="false">Direct APE acreage</button>
+      <button type="button" data-mode="outcomes" aria-pressed="false">Section 106 outcomes</button>
+    </div>
+    <figure class="card" id="toggle-card">
+      <h3 id="tc-title">Indirect / visual APE distance by project category</h3>
+      <p class="sub" id="tc-sub">Each dot is one project; the vertical tick marks the category median.</p>
+      <div class="legend" id="tc-legend">
+        <span class="key"><span class="swatch c"></span>Clean energy</span>
+        <span class="key"><span class="swatch g"></span>Natural gas &amp; LNG</span>
+      </div>
+      <div class="scrollx" id="toggle-holder"></div>
+      <figcaption id="tc-caption">Projects without a stated distance are excluded here and listed in the table below.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The full register</h2>
+    <p class="section-note">All 60 projects, with each figure traced to its source document and page. This is the chart data's table view — nothing above is gated behind a hover.</p>
+    <div class="card">
+      <div class="filters">
+        <button type="button" class="chip" data-f="all" aria-pressed="true">All projects</button>
+        <button type="button" class="chip" data-f="clean" aria-pressed="false">Clean energy</button>
+        <button type="button" class="chip" data-f="gas" aria-pressed="false">Gas &amp; LNG</button>
+        <input type="search" class="search" id="q" placeholder="Search projects or types…" aria-label="Search projects">
+        <span class="count-note" id="rowcount"></span>
+      </div>
+      <div class="scrollx">
+        <table id="register">
+          <thead>
+            <tr>
+              <th>Project</th><th>Type</th><th>Agency</th>
+              <th>Direct APE / survey</th><th>Indirect / visual APE</th>
+              <th>§106 outcome</th><th>Source</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap method prose">
+    <h2>Methodology &amp; caveats</h2>
+    <p>This is a first-pass pilot dataset compiled from public federal review documents — FERC environmental assessments and impact statements for gas and LNG projects; BOEM findings of adverse effect and memoranda of agreement for offshore wind; BLM programmatic agreements, historic property treatment plans, and EIS chapters for onshore wind, solar, and transmission. The planned approval window is January 1, 2021 through June 27, 2026; this pass also includes several date-expanded comparators.</p>
+
+    <h3>The coding rule is conservative</h3>
+    <div class="rule">A project is not treated as having a quantified APE unless an official public source states the APE definition, acreage, route width, buffer distance, viewshed radius, or equivalent measure. Missing public evidence is coded as <em>not publicly available</em> — never as zero burden.</div>
+    <p>That rule cuts against the thesis where it binds: several gas projects with no stated figure may have modest APEs that simply were not published, and they are shown as blank, not as small.</p>
+
+    <h3>What drives the asymmetry</h3>
+    <p>The wide clean-energy circles are largely a product of the <em>visual effects</em> doctrine: when a structure is tall (an 800-foot offshore turbine, a 500-kV lattice tower), agencies extend the APE to wherever the structure can be seen — out to 40+ miles offshore, 3–10 miles for transmission corridors. Compressor stations and pipelines are low-profile, so their indirect APEs stay at half a mile or terminate at the line of sight. The differential is structural, not accidental: a review regime that scales with visibility systematically burdens the tall, visible infrastructure of the energy transition and spares buried pipe.</p>
+
+    <h3>Read the numbers with these caveats</h3>
+    <ul>
+      <li><strong>Pilot status.</strong> Figures are coded from extracted document text and should be verified against the underlying PDFs before publication or citation.</li>
+      <li><strong>Mixed measures.</strong> "Direct APE" acreages mix defined APEs, surveyed areas, and disturbance footprints; corridor widths are converted to half-width from centerline. The table preserves each source's own wording.</li>
+      <li><strong>Document types differ.</strong> BOEM/BLM projects surface APE detail in Section 106 agreement documents; FERC projects surface it in EA/EIS text. Detail published, not just review conducted, varies by agency practice.</li>
+      <li><strong>Outcome coding.</strong> "Adverse effects / mitigation" means the public record shows an adverse-effect finding, MOA, treatment plan, or equivalent obligations; "consultation &amp; avoidance" means measures short of that; three gas projects remained unresolved with completion conditions.</li>
+      <li><strong>The outlier is included.</strong> Rio Grande LNG's 12-mile indirect study area is the largest gas-side figure and is shown, not dropped.</li>
+    </ul>
+
+    <h3>Section 106 in brief</h3>
+    <p>Section 106 requires agencies to take into account an undertaking's effects on properties listed or eligible for the National Register of Historic Places, in consultation with SHPOs, tribes, and the Advisory Council on Historic Preservation. It is procedural — it mandates consultation, not preservation — but the APE sets the workload: every historic property inside the circle must be identified, evaluated, and assessed for adverse effects, and adverse effects are typically resolved through negotiated mitigation agreements with no statutory deadline.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Pilot dataset · compiled July 2026 · Institute for Progress · Sources: public FERC, BOEM, and BLM review documents (see register). Draft for internal review — verify figures against source PDFs before citation.
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // group: c = clean, g = gas/LNG
+  // im = indirect/visual APE distance (statute miles, half-width where corridor), null = none stated
+  // da = direct APE / survey acreage (acres), null = none stated
+  // o: adverse | consult | none | pending
+  var DATA = [
+    // ---- Clean energy ----
+    { n:"Atlantic Shores Offshore Wind South", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Multi-part APE: marine, terrestrial, visual, O&M, staging areas", da:null,
+      im:45.1, it:"45.1-mile visual viewshed radius; 112 aboveground historic properties assessed",
+      o:"adverse", ot:"MOA resolves adverse effects on 38 submerged landform features and 29 aboveground historic properties",
+      src:"atlantic_moa.pdf; atlantic_chrvea.pdf — MOA & cumulative visual-effects assessment" },
+    { n:"Vineyard Wind 1", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Multi-part APE; full onshore cable ROW treated as terrestrial APE", da:null,
+      im:null, it:"Viewshed APE component; no single radius stated",
+      o:"adverse", ot:"Direct adverse effects found on Gay Head Light, Nantucket Historic District NHL, and multiple TCPs; MOA treatment plans and design conditions",
+      src:"vineyard_moa.pdf pp. 6–9; vineyard_ape.pdf; MOA amendment" },
+    { n:"South Fork Wind", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Marine and terrestrial APE components", da:null,
+      im:40, it:"40-mile viewshed / visual APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"South Fork FEIS p. 188" },
+    { n:"Revolution Wind", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Marine, terrestrial, and visual APE components", da:null,
+      im:40, it:"40-mile turbine viewshed APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"Finding of Adverse Effect / MOA pp. 14–15" },
+    { n:"Sunrise Wind", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Multi-part APE components", da:null,
+      im:40, it:"40-mile offshore visual APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"Finding of Adverse Effect / MOA p. 22" },
+    { n:"Ocean Wind 1", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Multi-part APE; onshore visual buffer", da:null,
+      im:40, it:"40-mile offshore visual APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"Finding of Adverse Effect / MOA pp. 13–14" },
+    { n:"Empire Wind", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Marine, terrestrial, and visual APE components", da:null,
+      im:40, it:"40-mile visual APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"Finding of Adverse Effect / MOA p. 19" },
+    { n:"New England Wind", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Visual APE components", da:null,
+      im:37.5, it:"37.5-mile maximum theoretical turbine visibility",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"Finding of Adverse Effect / MOA p. 13" },
+    { n:"Maryland Offshore Wind", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Visual APE components", da:null,
+      im:43, it:"43-mile viewshed radius",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"Finding of Adverse Effect / MOA pp. 15–16" },
+    { n:"Coastal Virginia Offshore Wind", g:"c", t:"Offshore wind", ag:"BOEM",
+      d:"Marine, terrestrial, visual, and construction/staging APE components", da:null,
+      im:null, it:"Multi-part APE; no single numeric measure stated",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"MOA p. 2" },
+    { n:"Beacon Wind site assessment", g:"c", t:"Offshore wind (site assessment)", ag:"BOEM",
+      d:"22.23-acre PAPE per suction-bucket testing site (984 ft × 984 ft)", da:22.23,
+      im:null, it:"None stated",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"Beacon Wind testing EA, appendix / consistency table", note:"Site-assessment activities EA, not a full project approval" },
+    { n:"Lava Ridge Wind", g:"c", t:"Onshore wind", ag:"BLM",
+      d:"Physical APE ≈84,375 acres (9,111 acres of potential disturbance)", da:84375,
+      im:10, it:"Non-physical APE: 20-mile-wide corridor, ≈1,809,080 acres, 1,599 identified cultural resources",
+      o:"adverse", ot:"Adverse effects to Minidoka National Historic Site and Wilson Butte Cave; ACHP terminated consultation",
+      src:"ACHP comments pp. 2–3; BLM response pp. 1–3" },
+    { n:"Gemini Solar", g:"c", t:"Solar", ag:"BLM",
+      d:"7,114-acre direct development-area APE", da:7114,
+      im:5, it:"5-mile visual APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"MOA p. 1" },
+    { n:"Dry Lake East Solar", g:"c", t:"Solar", ag:"BLM",
+      d:"Physical development-area APE", da:null,
+      im:5, it:"5-mile visual / auditory / atmospheric APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"MOA pp. 3, 39" },
+    { n:"Greenlink West", g:"c", t:"Transmission", ag:"BLM",
+      d:"Direct APE with 30-m buffers; 54,655 acres surveyed, 1,312 sites documented", da:54655,
+      im:3, it:"Visual APE 3 miles each side of alignment (6-mile-wide corridor); 0.5 mile around distribution lines",
+      o:"adverse", ot:"Treatment plan assumes all historic properties may be adversely affected until micrositing is complete",
+      src:"HPTP pp. 20–23; consultation appendices" },
+    { n:"SunZia ROW Amendment", g:"c", t:"Transmission", ag:"BLM",
+      d:"400–1,000-ft ROW corridor plus access-road and facility buffers", da:null,
+      im:5, it:"Indirect APE: visible areas within 5 miles or to the visual horizon; expandable for TCPs and trails",
+      o:"adverse", ot:"Amended PA / treatment plans address adverse effects via avoidance, phased authorization, monitoring",
+      src:"Amended PA pp. A1-4 – A1-6" },
+    { n:"Cross-Tie 500-kV", g:"c", t:"Transmission", ag:"BLM",
+      d:"500-ft pedestrian survey corridor; facility footprints plus buffers", da:null,
+      im:10, it:"APE is 10 miles either side of centerline (20-mile-wide), spanning federal, state, and private land",
+      o:"adverse", ot:"BLM determined the undertaking may adversely affect historic properties; treatment plan required",
+      src:"PA pp. 114–117; Attachments A/B pp. 145–148" },
+    { n:"Energy Gateway South", g:"c", t:"Transmission", ag:"BLM / USFS",
+      d:"Direct APE: 500 ft for lines, 200 ft for roads, facility footprints plus buffers", da:null,
+      im:3, it:"Indirect APE to the visual horizon or 3 miles either side, whichever is closer",
+      o:"adverse", ot:"Phased identification, treatment plans, and visual-effects procedures under the PA",
+      src:"PA pp. 5–7; Appendix C", note:"Date-expanded comparator (2016 ROD)" },
+    { n:"Ten West Link 500-kV", g:"c", t:"Transmission", ag:"BLM",
+      d:"400-ft direct APE corridor", da:null,
+      im:3, it:"3-mile indirect / visual APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"FEIS; PA Stipulation V.A; §106 appendix" },
+    { n:"TransWest Express", g:"c", t:"Transmission", ag:"BLM",
+      d:"500-ft direct APE for aboveground lines", da:null,
+      im:3, it:"3-mile / visual-horizon indirect APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"PA pp. 6–7" },
+    { n:"Cardinal-Hickory Creek 345-kV", g:"c", t:"Transmission", ag:"USDA RUS",
+      d:"1,000-ft direct APE", da:null,
+      im:0.19, it:"1,000-ft indirect APE",
+      o:"adverse", ot:"Adverse effects; material mitigation obligations",
+      src:"PA WHEREAS clauses and APE provisions; FEIS" },
+    { n:"Boardman to Hemingway", g:"c", t:"Transmission", ag:"BLM",
+      d:"No public quantified APE measure located", da:null,
+      im:null, it:"None stated",
+      o:"adverse", ot:"Section 106 consultation and mitigation burden documented",
+      src:"FEIS Ch. 3–4, cultural resources / §106 discussion" },
+    { n:"Central Ferry–Lower Monumental", g:"c", t:"Transmission", ag:"BPA",
+      d:"No public quantified APE measure located", da:null,
+      im:null, it:"None stated",
+      o:"adverse", ot:"Section 106 consultation and mitigation burden documented",
+      src:"FEIS §3.8" },
+    { n:"Champlain Hudson Power Express", g:"c", t:"Transmission", ag:"DOE",
+      d:"Direct and indirect APE treatment defined in PA; no quantified measure stated", da:null,
+      im:null, it:"None stated",
+      o:"adverse", ot:"Continuing identification and treatment-plan obligations under the PA",
+      src:"PA p. 2; APE and treatment-plan provisions" },
+
+    // ---- Natural gas & LNG ----
+    { n:"Texas to Louisiana Energy Pathway", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"Direct + indirect APE totals ≈1,351 acres (new compressor station)", da:1351,
+      im:0.5, it:"0.5-mile indirect APE around compressor station; no APE for existing fenced facility",
+      o:"none", ot:"SHPO concurred no historic properties present or affected",
+      src:"Final EA pp. 38–39" },
+    { n:"Southeast Supply Enhancement", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"Ground-disturbance areas plus buffer", da:null,
+      im:0.5, it:"0.5-mile indirect APE from aboveground facilities, terminating where line of sight is blocked",
+      o:"none", ot:"State SHPOs found no adverse effect; consultation incomplete with construction condition",
+      src:"EA pp. 47–49" },
+    { n:"Appalachia to Market III", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"300-ft-wide Phase I survey corridor plus access roads", da:null,
+      im:null, it:"None stated",
+      o:"none", ot:"SHPO concurred no effect / no historic properties; Section 106 complete",
+      src:"EA p. 21" },
+    { n:"Saguaro Connector", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"≈128.4 acres surveyed (ROW, workspaces, access road)", da:128.4,
+      im:null, it:"None stated",
+      o:"consult", ot:"Reroutes and avoidance; pre-construction condition pending SHPO review",
+      src:"Final EA pp. 28–30, 68" },
+    { n:"2026 Great Basin Expansion", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"147.3-acre archaeological APE", da:147.3,
+      im:null, it:"None stated",
+      o:"pending", ot:"No surveys submitted; SHPO review paused; completion condition",
+      src:"EA pp. 36–37" },
+    { n:"Wisconsin Reliability", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"2,890.4-acre direct archaeological APE", da:2890.4,
+      im:0.095, it:"500-ft indirect architectural APE around two compressor stations",
+      o:"pending", ot:"Section 106 incomplete; no-construction condition",
+      src:"EA pp. 80–86" },
+    { n:"Mountain Valley Pipeline & Equitrans", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"300-ft direct survey corridor", da:null,
+      im:1, it:"1-mile indirect APE for aboveground facilities",
+      o:"adverse", ot:"Adverse effects; treatment / mitigation obligations",
+      src:"FEIS §4.10.6.1" },
+    { n:"Atlantic Coast Pipeline", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"300-ft direct survey corridor", da:null,
+      im:null, it:"Qualitative viewshed treatment; no normalized radius stated",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"FEIS §4.10" },
+    { n:"Plaquemines LNG & Gator Express", g:"g", t:"LNG", ag:"FERC",
+      d:"735-acre direct/survey APE; 300-ft pipeline corridor", da:735,
+      im:1, it:"1-mile indirect APE",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §§4.10.1–4.10.2" },
+    { n:"Eastern Panhandle Expansion", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"300-ft direct corridor", da:null,
+      im:null, it:"Indirect APE limited to areas within view",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"EA, cultural resources section" },
+    { n:"Gulf LNG Liquefaction", g:"g", t:"LNG", ag:"FERC",
+      d:"No public quantified APE measure located", da:null,
+      im:null, it:"None stated",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §4.10" },
+    { n:"Risberg Line", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"359.3-acre direct APE", da:359.3,
+      im:null, it:"Qualitative indirect viewshed treatment",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"EA §5.2" },
+    { n:"Magnolia LNG & Lake Charles", g:"g", t:"LNG", ag:"FERC",
+      d:"No public quantified APE measure located", da:null,
+      im:null, it:"None stated",
+      o:"none", ot:"SHPO concurrence; no burden located",
+      src:"FEIS §§1.4, 4.10" },
+    { n:"GTN XPress", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"46.9-acre direct APE", da:46.9,
+      im:1, it:"1-mile indirect APE around aboveground facilities",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §4.9" },
+    { n:"Mountaineer XPress & Gulf XPress", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"No quantified APE stated under conservative coding rule", da:null,
+      im:null, it:"None stated",
+      o:"consult", ot:"Surveys, consultation, and avoidance measures",
+      src:"FEIS §5.1.10" },
+    { n:"PennEast Pipeline", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"400-ft direct survey corridor", da:null,
+      im:0.25, it:"0.25-mile indirect APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"FEIS §4.9.2" },
+    { n:"MVP Southgate", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"1,500-acre direct APE; 300-ft survey corridor", da:1500,
+      im:0.5, it:"0.5-mile indirect APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"FEIS §4.10.2.1" },
+    { n:"Venice Extension", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"299.9-acre direct APE", da:299.9,
+      im:0.3, it:"0.3-mile visual APE",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §4.7.1" },
+    { n:"Southside Reliability Enhancement", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"122.5-acre direct APE", da:122.5,
+      im:2, it:"2-mile indirect APE",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §4.7" },
+    { n:"Northern Lights 2023 Expansion", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"251.9-acre direct APE", da:251.9,
+      im:0.095, it:"500-ft indirect buffer around aboveground facilities",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §4.6.3.1" },
+    { n:"Wahpeton Expansion", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"3,085.3-acre direct survey area; 300-ft corridor", da:3085.3,
+      im:0.5, it:"0.5-mile visual evaluation area",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §§4.6.1–4.6.2" },
+    { n:"Ohio Valley Connector Expansion", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"No project-specific quantified APE located", da:null,
+      im:null, it:"None stated",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §4.7" },
+    { n:"Three Rivers Interconnection", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"250-ft direct corridor", da:null,
+      im:0.189, it:"0.189-mile (1,000-ft) indirect distance",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §4.7" },
+    { n:"Cumberland", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"No public quantified APE measure located", da:null,
+      im:null, it:"None stated",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §4.9" },
+    { n:"Virginia Reliability", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"809.9-acre direct APE; 300-ft corridor", da:809.9,
+      im:0.5, it:"0.5-mile indirect APE",
+      o:"pending", ot:"Unresolved surveys / evaluations; mitigation-or-no-construction conditions",
+      src:"Joint VRP/CEC FEIS §4.8.2.1" },
+    { n:"Commonwealth Energy Connector", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"163.4-acre direct APE; 300-ft corridor", da:163.4,
+      im:1, it:"1-mile indirect APE",
+      o:"none", ot:"No adverse effect / no historic properties; Section 106 complete",
+      src:"Joint VRP/CEC FEIS §4.8.2.1" },
+    { n:"Line 200 & Line 300", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"889.1-acre direct APE", da:889.1,
+      im:1, it:"1-mile indirect APE",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §5.1.11" },
+    { n:"Hackberry Storage", g:"g", t:"Gas storage", ag:"FERC",
+      d:"1,133-acre APE; survey widths for pipelines and facilities", da:1133,
+      im:null, it:"None stated",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §3.9" },
+    { n:"Henderson County Expansion", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"No public quantified APE measure located", da:null,
+      im:null, it:"None stated",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §4.8" },
+    { n:"Virginia Electrification", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"APE defined; no direct acreage stated", da:null,
+      im:0.5, it:"0.5-mile indirect APE",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §3.9" },
+    { n:"CP2 LNG & CP Express", g:"g", t:"LNG", ag:"FERC",
+      d:"APE defined; no direct acreage stated", da:null,
+      im:0.5, it:"0.5-mile indirect APE",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §4.11.1" },
+    { n:"Delta Lateral", g:"g", t:"Gas pipeline", ag:"FERC",
+      d:"1,897-acre direct/survey APE; 300-ft corridor", da:1897,
+      im:null, it:"Indirect line-of-sight treatment",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §4.12" },
+    { n:"Texas LNG Brownsville", g:"g", t:"LNG", ag:"FERC",
+      d:"338-acre direct APE", da:338,
+      im:1, it:"1-mile indirect APE",
+      o:"adverse", ot:"Adverse effects; mitigation obligations",
+      src:"Draft EIS §4.10.2.1" },
+    { n:"Commonwealth LNG", g:"g", t:"LNG", ag:"FERC",
+      d:"No public quantified APE measure located", da:null,
+      im:null, it:"None stated",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §4.10" },
+    { n:"Aguirre Offshore GasPort", g:"g", t:"LNG", ag:"FERC",
+      d:"155-acre marine/onshore APE", da:155,
+      im:null, it:"None stated",
+      o:"none", ot:"No adverse-effect or mitigation burden located",
+      src:"FEIS §4.9" },
+    { n:"Rio Grande LNG & Rio Bravo", g:"g", t:"LNG", ag:"FERC",
+      d:"1,000-acre terminal survey area", da:1000,
+      im:12, it:"12-mile indirect study area (described as a study area, not a defined APE)",
+      o:"consult", ot:"Consultation and avoidance measures",
+      src:"FEIS §4.10.1.1", note:"Largest gas-side figure in the dataset; retained, not dropped" }
+  ];
+
+  var OUTCOME = {
+    adverse: { label: "Adverse effects / mitigation", color: "var(--crit)", icon: "▲" },
+    consult: { label: "Consultation & avoidance", color: "var(--warn)", icon: "●" },
+    pending: { label: "Unresolved / conditions", color: "var(--serious)", icon: "◐" },
+    none:    { label: "No burden located", color: "var(--good)", icon: "○" }
+  };
+  var GROUP = { c: { name: "Clean energy", color: "var(--clean)" }, g: { name: "Natural gas & LNG", color: "var(--gas)" } };
+
+  function el(tag, attrs) {
+    var e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+  function div(cls, text) {
+    var d = document.createElement("div");
+    if (cls) d.className = cls;
+    if (text != null) d.textContent = text;
+    return d;
+  }
+  function fmtMi(v) {
+    if (v >= 10) return v % 1 ? v.toFixed(1) : String(v);
+    return v % 1 ? String(v) : String(v);
+  }
+  function fmtAc(v) { return v.toLocaleString("en-US", { maximumFractionDigits: 1 }); }
+
+  // Horizontal bar with rounded data-end (right), square baseline (left)
+  function barPath(x, y, w, h) {
+    var r = Math.min(4, w, h / 2);
+    return "M" + x + "," + y +
+      " L" + (x + w - r) + "," + y +
+      " Q" + (x + w) + "," + y + " " + (x + w) + "," + (y + r) +
+      " L" + (x + w) + "," + (y + h - r) +
+      " Q" + (x + w) + "," + (y + h) + " " + (x + w - r) + "," + (y + h) +
+      " L" + x + "," + (y + h) + " Z";
+  }
+
+  // ---------- Tooltip ----------
+  var tip = document.getElementById("tip");
+  function tipShow(d, x, y) {
+    tip.textContent = "";
+    var name = div("tp-name");
+    var key = div("tp-key"); key.style.background = GROUP[d.g].color;
+    name.appendChild(key);
+    name.appendChild(document.createTextNode(d.n));
+    tip.appendChild(name);
+    tip.appendChild(div("tp-type", d.t + " · " + d.ag));
+    var r1 = div("tp-row");
+    var b1 = document.createElement("b"); b1.textContent = "Indirect/visual: ";
+    r1.appendChild(b1); r1.appendChild(document.createTextNode(d.it));
+    tip.appendChild(r1);
+    var r2 = div("tp-row");
+    var b2 = document.createElement("b"); b2.textContent = "Direct: ";
+    r2.appendChild(b2); r2.appendChild(document.createTextNode(d.d));
+    tip.appendChild(r2);
+    var r3 = div("tp-row");
+    var b3 = document.createElement("b"); b3.textContent = "Outcome: ";
+    r3.appendChild(b3); r3.appendChild(document.createTextNode(d.ot));
+    tip.appendChild(r3);
+    if (d.note) tip.appendChild(div("tp-row", "Note: " + d.note));
+    tip.appendChild(div("tp-src", d.src));
+    tip.style.display = "block";
+    tip.setAttribute("aria-hidden", "false");
+    tipMove(x, y);
+  }
+  function tipMove(x, y) {
+    var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    var left = x + pad, top = y + pad;
+    if (left + w > window.innerWidth - 8) left = x - w - pad;
+    if (top + h > window.innerHeight - 8) top = y - h - pad;
+    tip.style.left = Math.max(8, left) + "px";
+    tip.style.top = Math.max(8, top) + "px";
+  }
+  function tipHide() { tip.style.display = "none"; tip.setAttribute("aria-hidden", "true"); }
+
+  function attachHover(hit, mark, d) {
+    hit.addEventListener("pointermove", function (ev) { tipShow(d, ev.clientX, ev.clientY); mark.style.filter = "brightness(1.12)"; });
+    hit.addEventListener("pointerleave", function () { tipHide(); mark.style.filter = ""; });
+    hit.addEventListener("focus", function () {
+      var r = hit.getBoundingClientRect();
+      tipShow(d, r.left + r.width / 2, r.top);
+      mark.style.filter = "brightness(1.12)";
+    });
+    hit.addEventListener("blur", function () { tipHide(); mark.style.filter = ""; });
+  }
+
+  // ---------- Scale circles ----------
+  function renderCircles() {
+    var holder = document.getElementById("circles-holder");
+    var W = 960, H = 560;
+    var cx = 330, cy = H / 2;
+    var maxMi = 40, maxR = 250;
+    var scale = maxR / maxMi;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", role: "img",
+      "aria-label": "Concentric circles drawn to scale: 40-mile offshore wind viewshed, 10-mile onshore wind corridor half-width, 5-mile solar visual APE, 3-mile transmission visual APE, and 0.5-mile gas indirect APE." });
+    svg.style.minWidth = "700px";
+
+    var rings = [
+      { mi: 40, label: "Offshore wind — 40 mi median viewshed", sub: "≈5,027 sq mi", g: "c", ly: 60 },
+      { mi: 10, label: "Onshore wind — 10 mi corridor half-width", sub: "≈314 sq mi (Lava Ridge)", g: "c", ly: 175 },
+      { mi: 5, label: "Solar — 5 mi visual APE", sub: "≈79 sq mi", g: "c", ly: 228 },
+      { mi: 3, label: "Transmission — 3 mi median visual APE", sub: "≈28 sq mi", g: "c", ly: 268 },
+      { mi: 0.5, label: "Gas & LNG — 0.5 mi median indirect APE", sub: "≈0.8 sq mi", g: "g", ly: 316 }
+    ];
+
+    rings.forEach(function (ring) {
+      var r = Math.max(ring.mi * scale, 3);
+      var color = ring.g === "c" ? "var(--clean)" : "var(--gas)";
+      var c = el("circle", { cx: cx, cy: cy, r: r, fill: "none", stroke: color, "stroke-width": ring.mi === 0.5 ? 0 : 2 });
+      if (ring.mi === 0.5) c.setAttribute("fill", color);
+      if (ring.g === "c" && ring.mi < 40) c.setAttribute("stroke-opacity", "0.85");
+      svg.appendChild(c);
+
+      // leader line from ring edge (upper-right diagonal point) to label
+      var angle = -Math.PI / 4;
+      var ex = cx + Math.cos(angle) * r, ey = cy + Math.sin(angle) * r;
+      var lx = 640, ly = ring.ly;
+      var lead = el("path", { d: "M" + ex + "," + ey + " L" + (lx - 12) + "," + ly + " L" + (lx - 4) + "," + ly,
+        fill: "none", stroke: "var(--axis)", "stroke-width": 1 });
+      svg.appendChild(lead);
+      var t1 = el("text", { x: lx, y: ly + 4, "font-size": "13", "font-weight": "600", fill: "var(--ink)" });
+      t1.textContent = ring.label;
+      svg.appendChild(t1);
+      var t2 = el("text", { x: lx, y: ly + 21, "font-size": "11.5", fill: "var(--muted)" });
+      t2.textContent = "area " + ring.sub;
+      svg.appendChild(t2);
+    });
+
+    // wash inside outer ring
+    var wash = el("circle", { cx: cx, cy: cy, r: 40 * scale, fill: "var(--clean-wash)" });
+    svg.insertBefore(wash, svg.firstChild);
+
+    // center marker
+    var center = el("circle", { cx: cx, cy: cy, r: 3, fill: "var(--ink)" });
+    svg.appendChild(center);
+    svg.appendChild(el("line", { x1: cx - 118, x2: cx - 8, y1: cy, y2: cy, stroke: "var(--axis)", "stroke-width": 1 }));
+    var ct = el("text", { x: cx - 124, y: cy + 4, "font-size": "11.5", fill: "var(--ink-2)", "text-anchor": "end" });
+    ct.textContent = "project site";
+    svg.appendChild(ct);
+
+    holder.appendChild(svg);
+  }
+
+  // ---------- Ledger ----------
+  function renderLedger() {
+    var holder = document.getElementById("ledger-holder");
+    var rows = DATA.filter(function (d) { return d.im != null; })
+      .sort(function (a, b) { return b.im - a.im || (a.g < b.g ? -1 : 1); });
+
+    var LBL = 250, RGT = 64, W = 960;
+    var plotW = W - LBL - RGT;
+    var rowH = 22, barH = 12;
+    var topPad = 8, axisH = 34;
+    var H = topPad + rows.length * rowH + axisH;
+    var maxV = 46;
+    function x(v) { return LBL + (v / maxV) * plotW; }
+
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", role: "img",
+      "aria-label": "Ranked bar chart of indirect or visual APE distance for 38 projects. All values above 2 miles are clean energy projects except Rio Grande LNG at 12 miles." });
+    svg.style.minWidth = "760px";
+
+    // gridlines + axis
+    [0, 10, 20, 30, 40].forEach(function (v) {
+      svg.appendChild(el("line", { x1: x(v), x2: x(v), y1: topPad, y2: topPad + rows.length * rowH, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
+      var t = el("text", { x: x(v), y: topPad + rows.length * rowH + 18, "text-anchor": "middle", "class": "tick-label" });
+      t.textContent = v === 40 ? "40 mi" : String(v);
+      svg.appendChild(t);
+    });
+
+    rows.forEach(function (d, i) {
+      var y = topPad + i * rowH;
+      var color = GROUP[d.g].color;
+      var w = Math.max((d.im / maxV) * plotW, 1.5);
+
+      var lbl = el("text", { x: LBL - 10, y: y + barH / 2 + 8, "text-anchor": "end", "class": "row-label" });
+      lbl.textContent = d.n.length > 34 ? d.n.slice(0, 33) + "…" : d.n;
+      svg.appendChild(lbl);
+
+      var mark = el("path", { d: barPath(LBL, y + (rowH - barH) / 2, w, barH), fill: color, "class": "bar-mark" });
+      svg.appendChild(mark);
+
+      var val = el("text", { x: LBL + w + 7, y: y + barH / 2 + 8, "class": "val-label" });
+      val.textContent = fmtMi(d.im);
+      svg.appendChild(val);
+
+      var hit = el("rect", { x: 0, y: y, width: W, height: rowH, "class": "bar-hit", tabindex: "0", role: "img",
+        "aria-label": d.n + ", " + d.t + ": " + d.it });
+      svg.appendChild(hit);
+      attachHover(hit, mark, d);
+    });
+
+    holder.appendChild(svg);
+  }
+
+  // ---------- Toggle chart ----------
+  var CATS = [
+    { key: "Offshore wind", match: function (d) { return d.t.indexOf("Offshore wind") === 0; }, g: "c" },
+    { key: "Onshore wind", match: function (d) { return d.t === "Onshore wind"; }, g: "c" },
+    { key: "Solar", match: function (d) { return d.t === "Solar"; }, g: "c" },
+    { key: "Transmission", match: function (d) { return d.t === "Transmission"; }, g: "c" },
+    { key: "Gas pipeline", match: function (d) { return d.t === "Gas pipeline"; }, g: "g" },
+    { key: "LNG & storage", match: function (d) { return d.t === "LNG" || d.t === "Gas storage"; }, g: "g" }
+  ];
+  function median(arr) {
+    var s = arr.slice().sort(function (a, b) { return a - b; });
+    var m = s.length / 2;
+    return s.length % 2 ? s[Math.floor(m)] : (s[m - 1] + s[m]) / 2;
+  }
+
+  function renderReach(holder) {
+    var LBL = 170, RGT = 40, W = 960;
+    var plotW = W - LBL - RGT;
+    var maxV = 46;
+    function x(v) { return LBL + (v / maxV) * plotW; }
+
+    // compute rows
+    var rows = CATS.map(function (c) {
+      var pts = DATA.filter(function (d) { return c.match(d) && d.im != null; }).sort(function (a, b) { return a.im - b.im; });
+      return { cat: c, pts: pts, med: pts.length ? median(pts.map(function (d) { return d.im; })) : null };
+    }).filter(function (r) { return r.pts.length; });
+
+    // stack duplicates
+    var topPad = 6, axisH = 34;
+    var heights = rows.map(function (r) {
+      var counts = {};
+      var maxStack = 1;
+      r.pts.forEach(function (d) { var k = d.im; counts[k] = (counts[k] || 0) + 1; if (counts[k] > maxStack) maxStack = counts[k]; });
+      r.maxStack = maxStack;
+      return Math.max(44, maxStack * 11 + 26);
+    });
+    var H = topPad + heights.reduce(function (a, b) { return a + b; }, 0) + axisH;
+
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", role: "img",
+      "aria-label": "Dot strip plot of indirect or visual APE distance by category. Medians: offshore wind 40 miles, onshore wind 10, solar 5, transmission 3, gas pipeline 0.5, LNG and storage 1." });
+    svg.style.minWidth = "760px";
+
+    [0, 10, 20, 30, 40].forEach(function (v) {
+      svg.appendChild(el("line", { x1: x(v), x2: x(v), y1: topPad, y2: H - axisH, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
+      var t = el("text", { x: x(v), y: H - axisH + 18, "text-anchor": "middle", "class": "tick-label" });
+      t.textContent = v === 40 ? "40 mi" : String(v);
+      svg.appendChild(t);
+    });
+
+    var yCursor = topPad;
+    rows.forEach(function (r, ri) {
+      var rh = heights[ri];
+      var cy = yCursor + rh / 2;
+
+      var lbl = el("text", { x: LBL - 12, y: cy - 2, "text-anchor": "end", "font-size": "12.5", "font-weight": "600", fill: "var(--ink)" });
+      lbl.textContent = r.cat.key;
+      svg.appendChild(lbl);
+      var sub = el("text", { x: LBL - 12, y: cy + 13, "text-anchor": "end", "font-size": "11", fill: "var(--muted)" });
+      sub.textContent = r.pts.length + (r.pts.length === 1 ? " project" : " projects");
+      svg.appendChild(sub);
+
+      // median tick
+      if (r.med != null) {
+        svg.appendChild(el("line", { x1: x(r.med), x2: x(r.med), y1: cy - rh / 2 + 8, y2: cy + rh / 2 - 8, stroke: "var(--ink)", "stroke-width": 2 }));
+        var mt = el("text", { x: x(r.med) + 6, y: cy - rh / 2 + 15, "font-size": "11", fill: "var(--ink-2)", "font-weight": "600" });
+        mt.textContent = "median " + fmtMi(r.med) + " mi";
+        svg.appendChild(mt);
+      }
+
+      // dots, stacked per identical value
+      var seen = {};
+      r.pts.forEach(function (d) {
+        var k = d.im;
+        seen[k] = (seen[k] || 0) + 1;
+        var count = seen[k];
+        var total = r.pts.filter(function (p) { return p.im === k; }).length;
+        var offset = (count - 1 - (total - 1) / 2) * 11;
+        var color = GROUP[d.g].color;
+        var dot = el("circle", { cx: x(d.im), cy: cy + offset, r: 4.5, fill: color, stroke: "var(--surface)", "stroke-width": 2, "class": "bar-mark" });
+        svg.appendChild(dot);
+        var hit = el("circle", { cx: x(d.im), cy: cy + offset, r: 12, "class": "bar-hit", tabindex: "0", role: "img",
+          "aria-label": d.n + ": " + d.it });
+        svg.appendChild(hit);
+        attachHover(hit, dot, d);
+      });
+
+      if (ri < rows.length - 1) {
+        svg.appendChild(el("line", { x1: 8, x2: W - 8, y1: yCursor + rh, y2: yCursor + rh, stroke: "var(--grid)", "stroke-width": 1 }));
+      }
+      yCursor += rh;
+    });
+
+    holder.appendChild(svg);
+  }
+
+  function renderAcres(holder) {
+    var rows = DATA.filter(function (d) { return d.da != null; }).sort(function (a, b) { return b.da - a.da; });
+    var LBL = 250, RGT = 80, W = 960;
+    var plotW = W - LBL - RGT;
+    var rowH = 22, barH = 12;
+    var topPad = 8, axisH = 34;
+    var H = topPad + rows.length * rowH + axisH;
+    var maxV = 90000;
+    function x(v) { return LBL + (v / maxV) * plotW; }
+
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", role: "img",
+      "aria-label": "Ranked bar chart of direct APE or survey acreage for 24 projects. Lava Ridge Wind is largest at 84,375 acres; most gas projects are under 3,100 acres." });
+    svg.style.minWidth = "760px";
+
+    [0, 20000, 40000, 60000, 80000].forEach(function (v) {
+      svg.appendChild(el("line", { x1: x(v), x2: x(v), y1: topPad, y2: topPad + rows.length * rowH, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
+      var t = el("text", { x: x(v), y: topPad + rows.length * rowH + 18, "text-anchor": "middle", "class": "tick-label" });
+      t.textContent = v === 80000 ? "80,000 acres" : v.toLocaleString("en-US");
+      svg.appendChild(t);
+    });
+
+    rows.forEach(function (d, i) {
+      var y = topPad + i * rowH;
+      var color = GROUP[d.g].color;
+      var w = Math.max((d.da / maxV) * plotW, 1.5);
+
+      var lbl = el("text", { x: LBL - 10, y: y + barH / 2 + 8, "text-anchor": "end", "class": "row-label" });
+      lbl.textContent = d.n.length > 34 ? d.n.slice(0, 33) + "…" : d.n;
+      svg.appendChild(lbl);
+
+      var mark = el("path", { d: barPath(LBL, y + (rowH - barH) / 2, w, barH), fill: color, "class": "bar-mark" });
+      svg.appendChild(mark);
+
+      var val = el("text", { x: LBL + w + 7, y: y + barH / 2 + 8, "class": "val-label" });
+      val.textContent = fmtAc(d.da);
+      svg.appendChild(val);
+
+      var hit = el("rect", { x: 0, y: y, width: W, height: rowH, "class": "bar-hit", tabindex: "0", role: "img",
+        "aria-label": d.n + ": " + d.d });
+      svg.appendChild(hit);
+      attachHover(hit, mark, d);
+    });
+
+    holder.appendChild(svg);
+  }
+
+  function renderOutcomes(holder) {
+    var groups = ["c", "g"];
+    var W = 960, LBL = 170, RGT = 190;
+    var plotW = W - LBL - RGT;
+    var rowH = 64, barH = 22, topPad = 10;
+    var H = topPad + groups.length * rowH + 8;
+
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", role: "img",
+      "aria-label": "Share of projects whose review ended with adverse-effect findings or mitigation obligations: clean energy 23 of 24 (96 percent), natural gas and LNG 5 of 36 (14 percent)." });
+    svg.style.minWidth = "700px";
+
+    groups.forEach(function (g, i) {
+      var all = DATA.filter(function (d) { return d.g === g; });
+      var adverse = all.filter(function (d) { return d.o === "adverse"; });
+      var frac = adverse.length / all.length;
+      var y = topPad + i * rowH + (rowH - barH) / 2;
+      var color = GROUP[g].color;
+
+      var lbl = el("text", { x: LBL - 12, y: y + barH / 2 - 3, "text-anchor": "end", "font-size": "13", "font-weight": "600", fill: "var(--ink)" });
+      lbl.textContent = GROUP[g].name.replace(" & LNG", " & LNG");
+      svg.appendChild(lbl);
+      var sub = el("text", { x: LBL - 12, y: y + barH / 2 + 13, "text-anchor": "end", "font-size": "11", fill: "var(--muted)" });
+      sub.textContent = all.length + " projects";
+      svg.appendChild(sub);
+
+      // track
+      var track = el("rect", { x: LBL, y: y, width: plotW, height: barH, rx: 4, fill: g === "c" ? "var(--clean-wash)" : "var(--gas-wash)" });
+      svg.appendChild(track);
+      // fill
+      var w = Math.max(frac * plotW, 2);
+      svg.appendChild(el("path", { d: barPath(LBL, y, w, barH), fill: color }));
+
+      var val = el("text", { x: LBL + plotW + 12, y: y + barH / 2 + 4.5, "font-size": "13.5", "font-weight": "600", fill: "var(--ink)" });
+      val.textContent = adverse.length + " of " + all.length + " (" + Math.round(frac * 100) + "%)";
+      svg.appendChild(val);
+    });
+
+    holder.appendChild(svg);
+
+    // breakdown mini-table
+    var tbl = document.createElement("table");
+    tbl.className = "mini";
+    var thead = document.createElement("thead");
+    var hr = document.createElement("tr");
+    ["Outcome", "Clean energy (24)", "Gas & LNG (36)"].forEach(function (h) {
+      var th = document.createElement("th"); th.textContent = h; hr.appendChild(th);
+    });
+    thead.appendChild(hr); tbl.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    ["adverse", "consult", "pending", "none"].forEach(function (o) {
+      var tr = document.createElement("tr");
+      var td0 = document.createElement("td");
+      var pill = document.createElement("span"); pill.className = "pill";
+      var pd = document.createElement("span"); pd.className = "pd"; pd.style.background = OUTCOME[o].color;
+      pill.appendChild(pd); pill.appendChild(document.createTextNode(OUTCOME[o].icon + " " + OUTCOME[o].label));
+      td0.appendChild(pill); tr.appendChild(td0);
+      ["c", "g"].forEach(function (g) {
+        var td = document.createElement("td");
+        td.className = "num";
+        td.textContent = String(DATA.filter(function (d) { return d.g === g && d.o === o; }).length);
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    tbl.appendChild(tbody);
+    holder.appendChild(tbl);
+  }
+
+  var MODES = {
+    reach: {
+      title: "Indirect / visual APE distance by project category",
+      sub: "Each dot is one project with a stated distance; the vertical tick marks the category median.",
+      caption: "Projects without a stated distance are excluded here and listed in the table below.",
+      legend: true, render: renderReach
+    },
+    acres: {
+      title: "Direct APE / surveyed acreage per project",
+      sub: "The 24 projects whose documents state a direct APE, survey area, or development-area acreage.",
+      caption: "Measures are heterogeneous — defined APEs, surveyed areas, and disturbance footprints — and are shown as stated in each source. Lava Ridge's 84,375-acre figure is its physical APE; potential ground disturbance was 9,111 acres.",
+      legend: true, render: renderAcres
+    },
+    outcomes: {
+      title: "How the reviews ended",
+      sub: "Share of projects whose public record shows adverse-effect findings, MOAs, treatment plans, or equivalent mitigation obligations.",
+      caption: "Outcomes coded from the evidence register. “Unresolved / conditions” covers three gas projects whose Section 106 review was incomplete at approval, with completion or no-construction conditions attached.",
+      legend: false, render: renderOutcomes
+    }
+  };
+
+  function setMode(mode) {
+    var holder = document.getElementById("toggle-holder");
+    holder.textContent = "";
+    document.getElementById("tc-title").textContent = MODES[mode].title;
+    document.getElementById("tc-sub").textContent = MODES[mode].sub;
+    document.getElementById("tc-caption").textContent = MODES[mode].caption;
+    document.getElementById("tc-legend").style.display = MODES[mode].legend ? "flex" : "none";
+    MODES[mode].render(holder);
+    document.querySelectorAll(".seg button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-mode") === mode ? "true" : "false");
+    });
+  }
+  document.querySelectorAll(".seg button").forEach(function (b) {
+    b.addEventListener("click", function () { setMode(b.getAttribute("data-mode")); });
+  });
+
+  // ---------- Register table ----------
+  var filterState = { group: "all", q: "" };
+  function renderTable() {
+    var tbody = document.querySelector("#register tbody");
+    tbody.textContent = "";
+    var q = filterState.q.toLowerCase();
+    var shown = 0;
+    var rows = DATA.slice().sort(function (a, b) {
+      if (a.g !== b.g) return a.g === "c" ? -1 : 1;
+      return (b.im || -1) - (a.im || -1);
+    });
+    rows.forEach(function (d) {
+      if (filterState.group !== "all" && d.g !== (filterState.group === "clean" ? "c" : "g")) return;
+      if (q && (d.n + " " + d.t + " " + d.ag).toLowerCase().indexOf(q) === -1) return;
+      shown++;
+      var tr = document.createElement("tr");
+
+      var td0 = document.createElement("td");
+      var pill = document.createElement("span"); pill.className = "pill";
+      var pd = document.createElement("span"); pd.className = "pd"; pd.style.background = GROUP[d.g].color;
+      pill.appendChild(pd); pill.appendChild(document.createTextNode(d.n));
+      td0.appendChild(pill);
+      if (d.note) {
+        var nt = document.createElement("div");
+        nt.style.cssText = "font-size:11px;color:var(--muted);font-weight:400;margin-top:2px;";
+        nt.textContent = d.note;
+        td0.appendChild(nt);
+      }
+      tr.appendChild(td0);
+
+      [d.t, d.ag].forEach(function (v) {
+        var td = document.createElement("td"); td.textContent = v; tr.appendChild(td);
+      });
+
+      var td3 = document.createElement("td"); td3.textContent = d.d; tr.appendChild(td3);
+      var td4 = document.createElement("td"); td4.textContent = d.it; tr.appendChild(td4);
+
+      var td5 = document.createElement("td");
+      var op = document.createElement("span"); op.className = "pill";
+      var opd = document.createElement("span"); opd.className = "pd"; opd.style.background = OUTCOME[d.o].color;
+      op.appendChild(opd); op.appendChild(document.createTextNode(OUTCOME[d.o].label));
+      td5.appendChild(op);
+      var ot = document.createElement("div");
+      ot.style.cssText = "font-size:11.5px;color:var(--muted);margin-top:2px;max-width:240px;";
+      ot.textContent = d.ot;
+      td5.appendChild(ot);
+      tr.appendChild(td5);
+
+      var td6 = document.createElement("td"); td6.className = "src-cell"; td6.textContent = d.src; tr.appendChild(td6);
+
+      tbody.appendChild(tr);
+    });
+    document.getElementById("rowcount").textContent = shown + " of " + DATA.length + " projects";
+  }
+  document.querySelectorAll(".chip").forEach(function (c) {
+    c.addEventListener("click", function () {
+      filterState.group = c.getAttribute("data-f");
+      document.querySelectorAll(".chip").forEach(function (x) {
+        x.setAttribute("aria-pressed", x === c ? "true" : "false");
+      });
+      renderTable();
+    });
+  });
+  document.getElementById("q").addEventListener("input", function (e) {
+    filterState.q = e.target.value; renderTable();
+  });
+
+  // ---------- init ----------
+  renderCircles();
+  renderLedger();
+  setMode("reach");
+  renderTable();
+})();
+</script>
