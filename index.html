@@ -1,4 +1,10 @@
-<title>NHPA: Two Standards of Review</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore how federal agencies define Areas of Potential Effects under Section 106 and how review scope differs across 60 energy projects.">
+<title>APE Explorer | Section 106 Review Scope</title>
 <style>
   :root {
     --page: #f7f7f4;
@@ -77,7 +83,7 @@
     letter-spacing: -0.01em;
     margin: 0 0 20px;
     text-wrap: balance;
-    max-width: 21ch;
+    max-width: 22ch;
   }
   h1 .hl-clean { color: var(--clean); }
   h1 .hl-gas { color: var(--gas); }
@@ -95,6 +101,41 @@
   .tile .t-value .unit { font-size: 18px; font-weight: 500; color: var(--ink-2); }
   .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: baseline; }
   .dot.c { background: var(--clean); } .dot.g { background: var(--gas); }
+
+  .definition {
+    margin: 30px 0 0; padding: 20px 22px; max-width: 72ch;
+    background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--clean);
+    border-radius: 8px; color: var(--ink-2);
+  }
+  .definition strong { color: var(--ink); }
+  .definition p { margin: 0; }
+  .definition p + p { margin-top: 9px; }
+
+  .consequence-grid, .reform-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
+  }
+  .consequence, .reform {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 18px 18px 16px;
+  }
+  .consequence .num, .reform .num {
+    display: inline-grid; place-items: center; width: 28px; height: 28px; margin-bottom: 10px;
+    border-radius: 50%; background: var(--clean-wash); color: var(--clean); font-size: 13px; font-weight: 700;
+  }
+  .consequence h3, .reform h3 { margin: 0 0 6px; font-size: 15.5px; line-height: 1.25; }
+  .consequence p, .reform p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .policy {
+    background: linear-gradient(135deg, var(--clean-wash), transparent 72%);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .policy .section-note { max-width: 76ch; }
+  .reform-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cta {
+    margin-top: 18px; padding: 15px 18px; border-radius: 8px; background: var(--ink); color: var(--page);
+    display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+  }
+  .cta p { margin: 0; font-size: 14px; max-width: 68ch; }
+  .cta a { color: var(--page); font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; white-space: nowrap; }
+  .plain-link { text-underline-offset: 3px; }
 
   /* ---------- Sections ---------- */
   section { padding: 34px 0; }
@@ -206,16 +247,23 @@
   @media (max-width: 640px) {
     header { padding-top: 48px; }
     .card { padding: 16px 14px 12px; }
+    .consequence-grid, .reform-grid { grid-template-columns: 1fr; }
   }
 </style>
+</head>
+<body>
 
 <div id="tip" role="status" aria-hidden="true"></div>
 
 <header>
   <div class="wrap">
-    <p class="eyebrow">NHPA Differential Treatment · Pilot Dataset · 60 Federal Energy Approvals</p>
-    <h1>A <span class="hl-clean">40&#8209;mile</span> circle for wind. A <span class="hl-gas">half&#8209;mile</span> circle for gas.</h1>
-    <p class="dek">Before approving a project, federal agencies must define an <strong>area of potential effects</strong> (APE) — the zone in which historic properties are identified and impacts reviewed under Section&nbsp;106 of the National Historic Preservation Act. In this pilot dataset of 60 recent energy approvals, reviewers drew far wider circles around clean energy projects than around natural gas infrastructure — and clean projects almost always exited review carrying mitigation obligations, while gas projects almost never did.</p>
+    <p class="eyebrow">APE Explorer · Section 106 review scope across 60 energy projects</p>
+    <h1>How far should historic-preservation review reach?</h1>
+    <p class="dek">Every Section&nbsp;106 review begins by defining an <strong>Area of Potential Effects</strong>, or <strong>APE</strong>: the geographic area where a federal agency determines that a project could alter the character or use of a historic property.</p>
+    <div class="definition">
+      <p><strong>An APE is not necessarily the project footprint, and it is not always a circle.</strong> A project may have one APE for ground disturbance and another for visual effects. For tall infrastructure, the visual APE can extend many miles beyond the land where construction occurs.</p>
+      <p>Why that matters: the APE sets the scope of the agency's identification effort. A larger APE can mean more research, consultation, property evaluations, time, and litigation risk.</p>
+    </div>
     <div class="tiles">
       <div class="tile">
         <div class="t-label"><span class="dot c"></span>Median visual APE — offshore wind</div>
@@ -228,9 +276,14 @@
         <div class="t-sub">around aboveground facilities, 20 projects with a stated figure</div>
       </div>
       <div class="tile">
-        <div class="t-label">Review area implied by those radii</div>
+        <div class="t-label">Area of a full circle at those radii</div>
         <div class="t-value">6,400×</div>
-        <div class="t-sub">≈5,000 sq mi vs ≈0.8 sq mi per project</div>
+        <div class="t-sub">≈5,000 sq mi vs ≈0.8 sq mi; actual APE shapes vary</div>
+      </div>
+      <div class="tile">
+        <div class="t-label">Adverse-effect finding or mitigation located</div>
+        <div class="t-value">96% <span class="unit">vs 14%</span></div>
+        <div class="t-sub">23 of 24 clean projects; 5 of 36 gas and LNG projects</div>
       </div>
     </div>
   </div>
@@ -238,56 +291,122 @@
 
 <section>
   <div class="wrap">
-    <h2>The circles, drawn to scale</h2>
-    <p class="section-note">Each ring is the median indirect (visual) APE distance for a project category, drawn to a common scale around a single project site. A 40-mile viewshed covers about 5,000 square miles — larger than Los Angeles County. A half-mile buffer covers 0.8 square miles — about three-fifths of Central Park.</p>
+    <h2>Why the size of an APE matters</h2>
+    <p class="section-note">Section 106 is a procedural law: it requires agencies to consider effects on historic properties, but it does not require preservation or any particular outcome. Even so, the boundary an agency draws can determine how much work is required before the agency can make its decision.</p>
+    <div class="consequence-grid">
+      <article class="consequence">
+        <span class="num">1</span>
+        <h3>It defines the search area</h3>
+        <p>Within the APE, the agency must make a reasonable and good-faith effort to identify historic properties that may be affected.</p>
+      </article>
+      <article class="consequence">
+        <span class="num">2</span>
+        <h3>It expands consultation</h3>
+        <p>A wider area can bring more properties, preservation offices, Tribes, local governments, and other consulting parties into the review.</p>
+      </article>
+      <article class="consequence">
+        <span class="num">3</span>
+        <h3>It increases uncertainty</h3>
+        <p>More identification, eligibility decisions, effects analysis, and negotiation can increase cost, delay, and exposure to litigation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How much land can a visual APE encompass?</h2>
+    <p class="section-note">Each ring shows the median stated indirect or visual APE distance for a project category, drawn to a common scale. A 40-mile radius encloses about 5,000 square miles — larger than Los Angeles County. A half-mile radius encloses about 0.8 square miles — about three-fifths of Central Park.</p>
     <figure class="card">
       <div class="scrollx" id="circles-holder"></div>
-      <figcaption>Median stated indirect/visual APE distance by category. Onshore wind is a single project (Lava Ridge), whose non-physical APE was a 20-mile-wide corridor — shown as its 10-mile half-width. Categories with no stated distance are excluded; see the project table for every record.</figcaption>
+      <figcaption>Median stated indirect or visual APE distance by category. These circles illustrate the area associated with each radius; actual APEs account for project geometry, terrain, line of sight, and different kinds of effects. Onshore wind is represented by one project, Lava Ridge, whose non-physical APE was a 20-mile-wide corridor.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap prose">
+    <h2>The disparity is structural, not necessarily intentional</h2>
+    <p class="section-note">The dataset does not show that agencies deliberately favor one energy source over another. It shows how the existing rules interact with different kinds of infrastructure.</p>
+    <p>Tall and visible infrastructure can be seen from farther away. Agencies therefore use visual-effects APEs extending 40 miles or more for offshore wind and several miles for transmission corridors. Buried pipelines and low-profile compressor stations generally receive much smaller indirect APEs, often ending at half a mile or where line of sight is blocked.</p>
+    <p>That approach creates a predictable asymmetry: a review system that scales with visibility imposes its broadest geographic reach on wind generation and the transmission lines needed to carry electricity. The policy question is not whether visual effects should ever be considered. It is whether the geographic scope and legal consequences of that review are clear, consistent, and proportionate to effects on actual historic properties.</p>
+  </div>
+</section>
+
+<section class="policy">
+  <div class="wrap">
+    <h2>What Congress should change</h2>
+    <p class="section-note">Congress can make APE determinations more consistent and proportionate without eliminating review of genuine effects on historic properties.</p>
+    <div class="reform-grid">
+      <article class="reform">
+        <span class="num">1</span>
+        <h3>Give one lead agency responsibility</h3>
+        <p>Make the NEPA lead agency the Section 106 lead, responsible for one coordinated APE determination — which may include different components for different effects — after consultation with the other participating agencies and consulting parties.</p>
+      </article>
+      <article class="reform">
+        <span class="num">2</span>
+        <h3>Set a clear visual-effects limit</h3>
+        <p>Establish a bright-line limit on visual APEs — such as three miles — or direct the Advisory Council on Historic Preservation to adopt an FCC-style distance schedule.</p>
+      </article>
+      <article class="reform">
+        <span class="num">3</span>
+        <h3>Require a material effect</h3>
+        <p>Treat a visual change as adverse only when it materially diminishes a documented characteristic that makes a property eligible for the National Register, measured against the property's existing setting.</p>
+      </article>
+      <article class="reform">
+        <span class="num">4</span>
+        <h3>Restore a direct causal boundary</h3>
+        <p>Limit Section 106 effects to those directly, proximately, and causally attributable to the discrete federal undertaking, rather than cumulative or regional effects of independent actions.</p>
+      </article>
+    </div>
+    <div class="cta">
+      <p><strong>APE reform is one part of a broader Section 106 agenda.</strong> The full proposal also addresses deadlines, mitigation, litigation remedies, and SHPO/THPO capacity.</p>
+      <a href="https://ifp.org/reforming-section-106-of-the-national-historic-preservation-act/">Read the full reform proposal →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Compare review scope and outcomes</h2>
+    <p class="section-note">Start with how the reviews ended, then compare the geographic reach of indirect or visual review and the acreage reported for direct review or survey.</p>
+    <div class="seg" role="group" aria-label="Chart view">
+      <button type="button" data-mode="outcomes" aria-pressed="true">Section 106 outcomes</button>
+      <button type="button" data-mode="reach" aria-pressed="false">Visual reach by category</button>
+      <button type="button" data-mode="acres" aria-pressed="false">Direct APE acreage</button>
+    </div>
+    <figure class="card" id="toggle-card">
+      <h3 id="tc-title">How the reviews ended</h3>
+      <p class="sub" id="tc-sub">Share of projects whose public record shows adverse-effect findings, MOAs, treatment plans, or equivalent mitigation obligations.</p>
+      <div class="legend" id="tc-legend">
+        <span class="key"><span class="swatch c"></span>Clean energy</span>
+        <span class="key"><span class="swatch g"></span>Natural gas &amp; LNG</span>
+      </div>
+      <div class="scrollx" id="toggle-holder"></div>
+      <figcaption id="tc-caption">Outcomes coded from the evidence register. “Unresolved / conditions” covers three gas projects whose Section 106 review was incomplete at approval.</figcaption>
     </figure>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Every project with a stated distance</h2>
-    <p class="section-note">All 38 projects whose public Section 106 or NEPA documents state an indirect or visual APE distance, ranked. The pattern is not subtle: every figure above 2 miles belongs to a clean energy project, with one exception — Rio Grande LNG's 12-mile figure, which its EIS describes as an indirect <em>study area</em> rather than a defined APE.</p>
+    <h2>The pattern across projects with a stated distance</h2>
+    <p class="section-note">The 38 projects whose public Section 106 or NEPA documents state an indirect or visual distance, ranked. Every figure above two miles belongs to a clean-energy project except Rio Grande LNG's 12-mile indirect <em>study area</em>, which its EIS does not describe as a defined APE.</p>
     <figure class="card">
       <div class="legend">
         <span class="key"><span class="swatch c"></span>Clean energy (wind, solar, transmission)</span>
         <span class="key"><span class="swatch g"></span>Natural gas &amp; LNG</span>
       </div>
       <div class="scrollx" id="ledger-holder"></div>
-      <figcaption>Indirect/visual APE distance in statute miles, as stated in each project's public documents (corridor widths shown as half-width from centerline). 22 additional projects define no single public distance — including six clean projects with multi-part APEs (e.g., Vineyard Wind 1) and 16 gas projects with none stated. Hover or tab to any bar for details; every value also appears in the table below.</figcaption>
+      <figcaption>Indirect or visual distance in statute miles, as stated in public project documents; corridor widths are shown as half-width from centerline. Twenty-two additional projects state no single public distance. Hover or tab to any bar for details.</figcaption>
     </figure>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Three ways to cut it</h2>
-    <p class="section-note">Toggle between the review's geographic reach, the acreage agencies actually surveyed, and how each review ended.</p>
-    <div class="seg" role="group" aria-label="Chart view">
-      <button type="button" data-mode="reach" aria-pressed="true">Visual reach by category</button>
-      <button type="button" data-mode="acres" aria-pressed="false">Direct APE acreage</button>
-      <button type="button" data-mode="outcomes" aria-pressed="false">Section 106 outcomes</button>
-    </div>
-    <figure class="card" id="toggle-card">
-      <h3 id="tc-title">Indirect / visual APE distance by project category</h3>
-      <p class="sub" id="tc-sub">Each dot is one project; the vertical tick marks the category median.</p>
-      <div class="legend" id="tc-legend">
-        <span class="key"><span class="swatch c"></span>Clean energy</span>
-        <span class="key"><span class="swatch g"></span>Natural gas &amp; LNG</span>
-      </div>
-      <div class="scrollx" id="toggle-holder"></div>
-      <figcaption id="tc-caption">Projects without a stated distance are excluded here and listed in the table below.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>The full register</h2>
-    <p class="section-note">All 60 projects, with each figure traced to its source document and page. This is the chart data's table view — nothing above is gated behind a hover.</p>
+    <h2>Explore all 60 project reviews</h2>
+    <p class="section-note">Search the underlying evidence register. Source descriptions and page references are reproduced as coded; missing public evidence is not treated as zero burden. <a class="plain-link" href="NHPA%20differential%20treatment%20pilot%20dataset%20-%20Evidence%20register.csv">Download the evidence register</a>.</p>
     <div class="card">
       <div class="filters">
         <button type="button" class="chip" data-f="all" aria-pressed="true">All projects</button>
@@ -314,33 +433,30 @@
 
 <section>
   <div class="wrap method prose">
-    <h2>Methodology &amp; caveats</h2>
-    <p>This is a first-pass pilot dataset compiled from public federal review documents — FERC environmental assessments and impact statements for gas and LNG projects; BOEM findings of adverse effect and memoranda of agreement for offshore wind; BLM programmatic agreements, historic property treatment plans, and EIS chapters for onshore wind, solar, and transmission. The planned approval window is January 1, 2021 through June 27, 2026; this pass also includes several date-expanded comparators.</p>
+    <h2>About the data</h2>
+    <p>This first-pass pilot dataset covers 60 federal energy-project reviews, primarily from January 1, 2021 through June 27, 2026, plus several earlier comparators. It draws from FERC environmental reviews for gas and LNG projects; BOEM findings and agreements for offshore wind; and BLM agreements, treatment plans, and environmental reviews for wind, solar, and transmission projects.</p>
 
     <h3>The coding rule is conservative</h3>
     <div class="rule">A project is not treated as having a quantified APE unless an official public source states the APE definition, acreage, route width, buffer distance, viewshed radius, or equivalent measure. Missing public evidence is coded as <em>not publicly available</em> — never as zero burden.</div>
     <p>That rule cuts against the thesis where it binds: several gas projects with no stated figure may have modest APEs that simply were not published, and they are shown as blank, not as small.</p>
-
-    <h3>What drives the asymmetry</h3>
-    <p>The wide clean-energy circles are largely a product of the <em>visual effects</em> doctrine: when a structure is tall (an 800-foot offshore turbine, a 500-kV lattice tower), agencies extend the APE to wherever the structure can be seen — out to 40+ miles offshore, 3–10 miles for transmission corridors. Compressor stations and pipelines are low-profile, so their indirect APEs stay at half a mile or terminate at the line of sight. The differential is structural, not accidental: a review regime that scales with visibility systematically burdens the tall, visible infrastructure of the energy transition and spares buried pipe.</p>
 
     <h3>Read the numbers with these caveats</h3>
     <ul>
       <li><strong>Pilot status.</strong> Figures are coded from extracted document text and should be verified against the underlying PDFs before publication or citation.</li>
       <li><strong>Mixed measures.</strong> "Direct APE" acreages mix defined APEs, surveyed areas, and disturbance footprints; corridor widths are converted to half-width from centerline. The table preserves each source's own wording.</li>
       <li><strong>Document types differ.</strong> BOEM/BLM projects surface APE detail in Section 106 agreement documents; FERC projects surface it in EA/EIS text. Detail published, not just review conducted, varies by agency practice.</li>
-      <li><strong>Outcome coding.</strong> "Adverse effects / mitigation" means the public record shows an adverse-effect finding, MOA, treatment plan, or equivalent obligations; "consultation &amp; avoidance" means measures short of that; three gas projects remained unresolved with completion conditions.</li>
+      <li><strong>Outcome coding.</strong> "Adverse effects / mitigation" means the public record shows an adverse-effect finding, MOA, treatment plan, or equivalent obligations; "consultation &amp; avoidance" means measures short of that; three gas projects remained unresolved with completion conditions. "No adverse-effect finding or mitigation located" does not mean the project incurred no compliance burden.</li>
       <li><strong>The outlier is included.</strong> Rio Grande LNG's 12-mile indirect study area is the largest gas-side figure and is shown, not dropped.</li>
     </ul>
 
     <h3>Section 106 in brief</h3>
-    <p>Section 106 requires agencies to take into account an undertaking's effects on properties listed or eligible for the National Register of Historic Places, in consultation with SHPOs, tribes, and the Advisory Council on Historic Preservation. It is procedural — it mandates consultation, not preservation — but the APE sets the workload: every historic property inside the circle must be identified, evaluated, and assessed for adverse effects, and adverse effects are typically resolved through negotiated mitigation agreements with no statutory deadline.</p>
+    <p>Section 106 requires agencies to take into account an undertaking's effects on properties listed or eligible for the National Register of Historic Places, in consultation with SHPOs, THPOs, Tribes, and the Advisory Council on Historic Preservation. It is procedural — it requires consideration and consultation, not preservation or any particular result. Within the APE, the agency must make a reasonable and good-faith identification effort, evaluate identified properties that have not already been evaluated, and assess adverse effects where historic properties may be affected.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    Pilot dataset · compiled July 2026 · Institute for Progress · Sources: public FERC, BOEM, and BLM review documents (see register). Draft for internal review — verify figures against source PDFs before citation.
+    APE Explorer · pilot dataset compiled July 2026 · Institute for Progress · Sources: public FERC, BOEM, and BLM review documents. Draft for internal review — verify figures against source PDFs before citation.
   </div>
 </footer>
 
@@ -662,7 +778,7 @@
     adverse: { label: "Adverse effects / mitigation", color: "var(--crit)", icon: "▲" },
     consult: { label: "Consultation & avoidance", color: "var(--warn)", icon: "●" },
     pending: { label: "Unresolved / conditions", color: "var(--serious)", icon: "◐" },
-    none:    { label: "No burden located", color: "var(--good)", icon: "○" }
+    none:    { label: "No adverse-effect finding or mitigation located", color: "var(--good)", icon: "○" }
   };
   var GROUP = { c: { name: "Clean energy", color: "var(--clean)" }, g: { name: "Natural gas & LNG", color: "var(--gas)" } };
 
@@ -1167,7 +1283,9 @@
   // ---------- init ----------
   renderCircles();
   renderLedger();
-  setMode("reach");
+  setMode("outcomes");
   renderTable();
 })();
 </script>
+</body>
+</html>
