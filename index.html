@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Explore how federal agencies define Areas of Potential Effects under Section 106 and how review scope differs across 60 energy projects.">
+<meta name="description" content="Section 106 review zones for clean energy run 40 miles; for gas, half a mile. Explore 60 federal reviews and why NHPA reform is a clean-energy win.">
 <title>APE Explorer | Section 106 Review Scope</title>
 <style>
   :root {
@@ -21,6 +21,7 @@
     --gas-wash: rgba(235,104,52,0.12);
     --chip-bg: rgba(11,11,11,0.05);
     --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
+    --ring-2: #1baf7a; --ring-3: #eda100; --ring-4: #008300;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -37,6 +38,7 @@
       --clean-wash: rgba(57,135,229,0.16);
       --gas-wash: rgba(217,89,38,0.18);
       --chip-bg: rgba(255,255,255,0.07);
+      --ring-2: #199e70; --ring-3: #c98500; --ring-4: #008300;
     }
   }
   :root[data-theme="dark"] {
@@ -46,6 +48,7 @@
     --clean: #3987e5; --gas: #d95926;
     --clean-wash: rgba(57,135,229,0.16); --gas-wash: rgba(217,89,38,0.18);
     --chip-bg: rgba(255,255,255,0.07);
+    --ring-2: #199e70; --ring-3: #c98500; --ring-4: #008300;
   }
   :root[data-theme="light"] {
     --page: #f7f7f4; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e;
@@ -54,6 +57,7 @@
     --clean: #2a78d6; --gas: #eb6834;
     --clean-wash: rgba(42,120,214,0.10); --gas-wash: rgba(235,104,52,0.12);
     --chip-bg: rgba(11,11,11,0.05);
+    --ring-2: #1baf7a; --ring-3: #eda100; --ring-4: #008300;
   }
 
   * { box-sizing: border-box; }
@@ -258,33 +262,11 @@
 <header>
   <div class="wrap">
     <p class="eyebrow">APE Explorer · Section 106 review scope across 60 energy projects</p>
-    <h1>How far should historic-preservation review reach?</h1>
-    <p class="dek">Every Section&nbsp;106 review begins by defining an <strong>Area of Potential Effects</strong>, or <strong>APE</strong>: the geographic area where a federal agency determines that a project could alter the character or use of a historic property.</p>
+    <h1>NHPA reviews disproportionately burden <span class="hl-clean">clean energy</span> and transmission</h1>
+    <p class="dek">Under Section&nbsp;106 of the National Historic Preservation Act, every federally permitted project gets a historic-preservation review. Its scope is set by an <strong>Area of Potential Effects</strong>, or <strong>APE</strong> — the zone the agency must examine for impacts on historic properties. Across 60 recent federal energy reviews, the median stated review distance was <strong>40 miles for offshore wind</strong> and <strong>half a mile for gas and LNG</strong>. Fixing the scoping rules behind that gap is a clean-energy win.</p>
     <div class="definition">
-      <p><strong>An APE is not necessarily the project footprint, and it is not always a circle.</strong> A project may have one APE for ground disturbance and another for visual effects. For tall infrastructure, the visual APE can extend many miles beyond the land where construction occurs.</p>
+      <p><strong>Why the gap: review scope scales with visibility.</strong> An APE is not just the project footprint — alongside the zone of ground disturbance, agencies add a visual-effects zone extending as far as the project can be seen. Wind turbines and transmission towers are tall by necessity, so their visual APEs stretch for miles. Gas pipelines are buried and compressor stations are low-profile, so their APEs typically end at half a mile or where line of sight is blocked.</p>
       <p>Why that matters: the APE sets the scope of the agency's identification effort. A larger APE can mean more research, consultation, property evaluations, time, and litigation risk.</p>
-    </div>
-    <div class="tiles">
-      <div class="tile">
-        <div class="t-label"><span class="dot c"></span>Median visual APE — offshore wind</div>
-        <div class="t-value">40 <span class="unit">miles</span></div>
-        <div class="t-sub">viewshed radius, 8 projects with a stated figure</div>
-      </div>
-      <div class="tile">
-        <div class="t-label"><span class="dot g"></span>Median indirect APE — gas &amp; LNG</div>
-        <div class="t-value">0.5 <span class="unit">miles</span></div>
-        <div class="t-sub">around aboveground facilities, 20 projects with a stated figure</div>
-      </div>
-      <div class="tile">
-        <div class="t-label">Area of a full circle at those radii</div>
-        <div class="t-value">6,400×</div>
-        <div class="t-sub">≈5,000 sq mi vs ≈0.8 sq mi; actual APE shapes vary</div>
-      </div>
-      <div class="tile">
-        <div class="t-label">Adverse-effect finding or mitigation located</div>
-        <div class="t-value">96% <span class="unit">vs 14%</span></div>
-        <div class="t-sub">23 of 24 clean projects; 5 of 36 gas and LNG projects</div>
-      </div>
     </div>
   </div>
 </header>
@@ -318,45 +300,68 @@
     <h2>How much land can a visual APE encompass?</h2>
     <p class="section-note">Each ring shows the median stated indirect or visual APE distance for a project category, drawn to a common scale. A 40-mile radius encloses about 5,000 square miles — larger than Los Angeles County. A half-mile radius encloses about 0.8 square miles — about three-fifths of Central Park.</p>
     <figure class="card">
+      <h3>Radius comparison by project category</h3>
+      <p class="sub">Rings drawn to a common scale — bigger radius means a larger reviewed area</p>
       <div class="scrollx" id="circles-holder"></div>
       <figcaption>Median stated indirect or visual APE distance by category. These circles illustrate the area associated with each radius; actual APEs account for project geometry, terrain, line of sight, and different kinds of effects. Onshore wind is represented by one project, Lava Ridge, whose non-physical APE was a 20-mile-wide corridor.</figcaption>
     </figure>
+    <div class="tiles">
+      <div class="tile">
+        <div class="t-label"><span class="dot c"></span>Median visual APE — offshore wind</div>
+        <div class="t-value">40 <span class="unit">miles</span></div>
+        <div class="t-sub">viewshed radius, 8 projects with a stated figure</div>
+      </div>
+      <div class="tile">
+        <div class="t-label"><span class="dot g"></span>Median indirect APE — gas &amp; LNG</div>
+        <div class="t-value">0.5 <span class="unit">miles</span></div>
+        <div class="t-sub">around aboveground facilities, 20 projects with a stated figure</div>
+      </div>
+      <div class="tile">
+        <div class="t-label">Area of a full circle at those radii</div>
+        <div class="t-value">6,400×</div>
+        <div class="t-sub">≈5,000 sq mi vs ≈0.8 sq mi; actual APE shapes vary</div>
+      </div>
+      <div class="tile">
+        <div class="t-label">Adverse-effect finding or mitigation located</div>
+        <div class="t-value">96% <span class="unit">vs 14%</span></div>
+        <div class="t-sub">23 of 24 clean projects; 5 of 36 gas and LNG projects</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap prose">
-    <h2>The disparity is structural, not necessarily intentional</h2>
-    <p class="section-note">The dataset does not show that agencies deliberately favor one energy source over another. It shows how the existing rules interact with different kinds of infrastructure.</p>
-    <p>Tall and visible infrastructure can be seen from farther away. Agencies therefore use visual-effects APEs extending 40 miles or more for offshore wind and several miles for transmission corridors. Buried pipelines and low-profile compressor stations generally receive much smaller indirect APEs, often ending at half a mile or where line of sight is blocked.</p>
-    <p>That approach creates a predictable asymmetry: a review system that scales with visibility imposes its broadest geographic reach on wind generation and the transmission lines needed to carry electricity. The policy question is not whether visual effects should ever be considered. It is whether the geographic scope and legal consequences of that review are clear, consistent, and proportionate to effects on actual historic properties.</p>
+    <h2>The disparity is built into the rules</h2>
+    <p class="section-note">None of this requires assuming bad faith by agencies. They scale visual review to how far a project can be seen — and clean-energy infrastructure is tall, so a facially neutral rule produces review areas that differ by orders of magnitude.</p>
+    <p>A review system that scales with visibility concentrates its broadest reach, longest timelines, and greatest litigation exposure on wind generation and the transmission lines needed to carry electricity — the projects a clean-energy buildout requires most. Visual effects on historic properties deserve consideration. The live question for Congress is whether the geographic scope and legal consequences of that consideration are clear, consistent, and proportionate to effects on actual historic properties.</p>
   </div>
 </section>
 
 <section class="policy">
   <div class="wrap">
-    <h2>What Congress should change</h2>
-    <p class="section-note">Congress can make APE determinations more consistent and proportionate without eliminating review of genuine effects on historic properties.</p>
+    <h2>What Congress should change — and who gains</h2>
+    <p class="section-note">Congress can make APE determinations more consistent and proportionate while preserving review of genuine effects on historic properties. The distributional math matters for anyone whose priority is clean energy: gas and LNG review areas are already small, so uniform limits change little for them. The gains from each reform below go overwhelmingly to wind, solar, and transmission.</p>
     <div class="reform-grid">
       <article class="reform">
         <span class="num">1</span>
-        <h3>Give one lead agency responsibility</h3>
-        <p>Make the NEPA lead agency the Section 106 lead, responsible for one coordinated APE determination — which may include different components for different effects — after consultation with the other participating agencies and consulting parties.</p>
-      </article>
-      <article class="reform">
-        <span class="num">2</span>
         <h3>Set a clear visual-effects limit</h3>
         <p>Establish a bright-line limit on visual APEs — such as three miles — or direct the Advisory Council on Historic Preservation to adopt an FCC-style distance schedule.</p>
       </article>
       <article class="reform">
-        <span class="num">3</span>
+        <span class="num">2</span>
         <h3>Require a material effect</h3>
         <p>Treat a visual change as adverse only when it materially diminishes a documented characteristic that makes a property eligible for the National Register, measured against the property's existing setting.</p>
       </article>
       <article class="reform">
-        <span class="num">4</span>
+        <span class="num">3</span>
         <h3>Restore a direct causal boundary</h3>
         <p>Limit Section 106 effects to those directly, proximately, and causally attributable to the discrete federal undertaking, rather than cumulative or regional effects of independent actions.</p>
+      </article>
+      <article class="reform">
+        <span class="num">4</span>
+        <h3>Consider discrete features within landscape-scale historic properties</h3>
+        <p>Entire land- and seascapes — including the 500–600-square-mile Nantucket Sound — have been treated as single historic properties. Require parties to identify the specific character-defining features that make such a property eligible, and limit adverse-effect findings to material impairment of those features.</p>
       </article>
     </div>
     <div class="cta">
@@ -390,9 +395,11 @@
 
 <section>
   <div class="wrap">
-    <h2>The pattern across projects with a stated distance</h2>
+    <h2>Above two miles, it is almost all clean energy</h2>
     <p class="section-note">The 38 projects whose public Section 106 or NEPA documents state an indirect or visual distance, ranked. Every figure above two miles belongs to a clean-energy project except Rio Grande LNG's 12-mile indirect <em>study area</em>, which its EIS does not describe as a defined APE.</p>
     <figure class="card">
+      <h3>Indirect or visual APE distance, ranked</h3>
+      <p class="sub">38 projects with a stated distance, in statute miles</p>
       <div class="legend">
         <span class="key"><span class="swatch c"></span>Clean energy (wind, solar, transmission)</span>
         <span class="key"><span class="swatch g"></span>Natural gas &amp; LNG</span>
@@ -408,6 +415,8 @@
     <h2>Explore all 60 project reviews</h2>
     <p class="section-note">Search the underlying evidence register. Source descriptions and page references are reproduced as coded; missing public evidence is not treated as zero burden. <a class="plain-link" href="NHPA%20differential%20treatment%20pilot%20dataset%20-%20Evidence%20register.csv">Download the evidence register</a>.</p>
     <div class="card">
+      <h3>Evidence register</h3>
+      <p class="sub">All 60 project reviews — search or filter by category</p>
       <div class="filters">
         <button type="button" class="chip" data-f="all" aria-pressed="true">All projects</button>
         <button type="button" class="chip" data-f="clean" aria-pressed="false">Clean energy</button>
@@ -871,32 +880,32 @@
     svg.style.minWidth = "700px";
 
     var rings = [
-      { mi: 40, label: "Offshore wind — 40 mi median viewshed", sub: "≈5,027 sq mi", g: "c", ly: 60 },
-      { mi: 10, label: "Onshore wind — 10 mi corridor half-width", sub: "≈314 sq mi (Lava Ridge)", g: "c", ly: 175 },
-      { mi: 5, label: "Solar — 5 mi visual APE", sub: "≈79 sq mi", g: "c", ly: 228 },
-      { mi: 3, label: "Transmission — 3 mi median visual APE", sub: "≈28 sq mi", g: "c", ly: 268 },
-      { mi: 0.5, label: "Gas & LNG — 0.5 mi median indirect APE", sub: "≈0.8 sq mi", g: "g", ly: 316 }
+      { mi: 40, label: "Offshore wind — 40 mi median viewshed", sub: "≈5,027 sq mi", color: "var(--clean)", ly: 60 },
+      { mi: 10, label: "Onshore wind — 10 mi corridor half-width", sub: "≈314 sq mi (Lava Ridge)", color: "var(--ring-2)", ly: 175 },
+      { mi: 5, label: "Solar — 5 mi visual APE", sub: "≈79 sq mi", color: "var(--ring-3)", ly: 228 },
+      { mi: 3, label: "Transmission — 3 mi median visual APE", sub: "≈28 sq mi", color: "var(--ring-4)", ly: 268 },
+      { mi: 0.5, label: "Gas & LNG — 0.5 mi median indirect APE", sub: "≈0.8 sq mi", color: "var(--gas)", ly: 316 }
     ];
 
     rings.forEach(function (ring) {
       var r = Math.max(ring.mi * scale, 3);
-      var color = ring.g === "c" ? "var(--clean)" : "var(--gas)";
-      var c = el("circle", { cx: cx, cy: cy, r: r, fill: "none", stroke: color, "stroke-width": ring.mi === 0.5 ? 0 : 2 });
-      if (ring.mi === 0.5) c.setAttribute("fill", color);
-      if (ring.g === "c" && ring.mi < 40) c.setAttribute("stroke-opacity", "0.85");
+      var c = el("circle", { cx: cx, cy: cy, r: r, fill: "none", stroke: ring.color, "stroke-width": ring.mi === 0.5 ? 0 : 2 });
+      if (ring.mi === 0.5) c.setAttribute("fill", ring.color);
       svg.appendChild(c);
 
-      // leader line from ring edge (upper-right diagonal point) to label
+      // leader line from ring edge (upper-right diagonal point) to a color swatch + label
       var angle = -Math.PI / 4;
       var ex = cx + Math.cos(angle) * r, ey = cy + Math.sin(angle) * r;
       var lx = 640, ly = ring.ly;
       var lead = el("path", { d: "M" + ex + "," + ey + " L" + (lx - 12) + "," + ly + " L" + (lx - 4) + "," + ly,
         fill: "none", stroke: "var(--axis)", "stroke-width": 1 });
       svg.appendChild(lead);
-      var t1 = el("text", { x: lx, y: ly + 4, "font-size": "13", "font-weight": "600", fill: "var(--ink)" });
+      var sw = el("circle", { cx: lx + 3, cy: ly - 4, r: 4, fill: ring.color });
+      svg.appendChild(sw);
+      var t1 = el("text", { x: lx + 13, y: ly + 4, "font-size": "13", "font-weight": "600", fill: "var(--ink)" });
       t1.textContent = ring.label;
       svg.appendChild(t1);
-      var t2 = el("text", { x: lx, y: ly + 21, "font-size": "11.5", fill: "var(--muted)" });
+      var t2 = el("text", { x: lx + 13, y: ly + 21, "font-size": "11.5", fill: "var(--muted)" });
       t2.textContent = "area " + ring.sub;
       svg.appendChild(t2);
     });
@@ -925,25 +934,29 @@
     var LBL = 250, RGT = 64, W = 960;
     var plotW = W - LBL - RGT;
     var rowH = 22, barH = 12;
-    var topPad = 8, axisH = 34;
-    var H = topPad + rows.length * rowH + axisH;
+    var axisH = 30, chartTop = axisH + 8;
+    var H = chartTop + rows.length * rowH + 4;
     var maxV = 46;
     function x(v) { return LBL + (v / maxV) * plotW; }
 
     var svg = el("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", role: "img",
-      "aria-label": "Ranked bar chart of indirect or visual APE distance for 38 projects. All values above 2 miles are clean energy projects except Rio Grande LNG at 12 miles." });
+      "aria-label": "Ranked bar chart of indirect or visual APE distance, in miles, for 38 projects. All values above 2 miles are clean energy projects except Rio Grande LNG at 12 miles." });
     svg.style.minWidth = "760px";
 
-    // gridlines + axis
+    // axis title + gridlines/ticks, placed above the bars so units are visible without scrolling
+    var axisTitle = el("text", { x: LBL, y: 12, "font-size": "11.5", "font-weight": "600", fill: "var(--ink-2)" });
+    axisTitle.textContent = "Indirect or visual APE distance (miles)";
+    svg.appendChild(axisTitle);
+
     [0, 10, 20, 30, 40].forEach(function (v) {
-      svg.appendChild(el("line", { x1: x(v), x2: x(v), y1: topPad, y2: topPad + rows.length * rowH, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
-      var t = el("text", { x: x(v), y: topPad + rows.length * rowH + 18, "text-anchor": "middle", "class": "tick-label" });
+      svg.appendChild(el("line", { x1: x(v), x2: x(v), y1: chartTop, y2: chartTop + rows.length * rowH, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
+      var t = el("text", { x: x(v), y: chartTop - 8, "text-anchor": "middle", "class": "tick-label" });
       t.textContent = v === 40 ? "40 mi" : String(v);
       svg.appendChild(t);
     });
 
     rows.forEach(function (d, i) {
-      var y = topPad + i * rowH;
+      var y = chartTop + i * rowH;
       var color = GROUP[d.g].color;
       var w = Math.max((d.im / maxV) * plotW, 1.5);
 
