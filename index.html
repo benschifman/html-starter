@@ -10,18 +10,19 @@
     --page: #f7f7f4;
     --surface: #fcfcfb;
     --ink: #0b0b0b;
-    --ink-2: #52514e;
-    --muted: #898781;
+    --ink-2: #454440;
+    --muted: #53514e;
     --grid: #e1e0d9;
     --axis: #c3c2b7;
     --border: rgba(11,11,11,0.10);
     --clean: #2a78d6;
     --gas: #eb6834;
+    --accent-text: #184f95;
     --clean-wash: rgba(42,120,214,0.10);
     --gas-wash: rgba(235,104,52,0.12);
     --chip-bg: rgba(11,11,11,0.05);
     --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
-    --ring-2: #1baf7a; --ring-3: #eda100; --ring-4: #008300;
+    --ring-2: #128a60; --ring-3: #a56d00; --ring-4: #006300;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -29,12 +30,13 @@
       --surface: #1a1a19;
       --ink: #ffffff;
       --ink-2: #c3c2b7;
-      --muted: #898781;
+      --muted: #aaa8a0;
       --grid: #2c2c2a;
       --axis: #383835;
       --border: rgba(255,255,255,0.10);
       --clean: #3987e5;
       --gas: #d95926;
+      --accent-text: #86b6ef;
       --clean-wash: rgba(57,135,229,0.16);
       --gas-wash: rgba(217,89,38,0.18);
       --chip-bg: rgba(255,255,255,0.07);
@@ -43,21 +45,23 @@
   }
   :root[data-theme="dark"] {
     --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7;
-    --muted: #898781; --grid: #2c2c2a; --axis: #383835;
+    --muted: #aaa8a0; --grid: #2c2c2a; --axis: #383835;
     --border: rgba(255,255,255,0.10);
     --clean: #3987e5; --gas: #d95926;
+    --accent-text: #86b6ef;
     --clean-wash: rgba(57,135,229,0.16); --gas-wash: rgba(217,89,38,0.18);
     --chip-bg: rgba(255,255,255,0.07);
     --ring-2: #199e70; --ring-3: #c98500; --ring-4: #008300;
   }
   :root[data-theme="light"] {
-    --page: #f7f7f4; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e;
-    --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7;
+    --page: #f7f7f4; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #454440;
+    --muted: #53514e; --grid: #e1e0d9; --axis: #c3c2b7;
     --border: rgba(11,11,11,0.10);
     --clean: #2a78d6; --gas: #eb6834;
+    --accent-text: #184f95;
     --clean-wash: rgba(42,120,214,0.10); --gas-wash: rgba(235,104,52,0.12);
     --chip-bg: rgba(11,11,11,0.05);
-    --ring-2: #1baf7a; --ring-3: #eda100; --ring-4: #008300;
+    --ring-2: #128a60; --ring-3: #a56d00; --ring-4: #006300;
   }
 
   * { box-sizing: border-box; }
@@ -89,9 +93,10 @@
     text-wrap: balance;
     max-width: 22ch;
   }
-  h1 .hl-clean { color: var(--clean); }
+  h1 .hl-clean { color: var(--accent-text); }
   h1 .hl-gas { color: var(--gas); }
   .dek { font-size: 18.5px; color: var(--ink-2); max-width: 62ch; margin: 0; }
+  .dek + .dek { margin-top: 12px; }
   .dek strong { color: var(--ink); font-weight: 600; }
 
   .tiles { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
@@ -158,6 +163,18 @@
   .scrollx { overflow-x: auto; }
   figcaption, .caption { font-size: 12.5px; color: var(--muted); margin-top: 10px; max-width: 78ch; }
   figure { margin: 0; }
+
+  .hover-compare { position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); cursor: pointer; display: block; }
+  .hover-compare img { width: 100%; height: auto; display: block; }
+  .hover-compare .after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+  .hover-compare:hover .after, .hover-compare:focus-visible .after, .hover-compare.show .after { opacity: 1; }
+  .hover-compare:focus-visible { outline: 2px solid var(--clean); outline-offset: 2px; }
+  @media (prefers-reduced-motion: no-preference) { .hover-compare .after { transition: opacity 200ms ease; } }
+  .hover-hint {
+    position: absolute; top: 10px; left: 10px; z-index: 2; pointer-events: none;
+    background: rgba(11,11,11,0.72); color: #ffffff; font-size: 12.5px; font-weight: 600;
+    padding: 5px 11px; border-radius: 999px;
+  }
 
   .legend { display: flex; gap: 18px; align-items: center; font-size: 13px; color: var(--ink-2); margin: 0 0 12px; flex-wrap: wrap; }
   .legend .key { display: inline-flex; align-items: center; gap: 7px; }
@@ -243,7 +260,8 @@
   .mini { font-size: 13px; margin-top: 16px; }
   .mini td, .mini th { padding: 6px 14px 6px 0; }
 
-  a { color: var(--clean); }
+  a { color: var(--accent-text); }
+  .search::placeholder { color: var(--muted); opacity: 1; }
   @media (prefers-reduced-motion: no-preference) {
     .bar-mark { transition: filter 120ms ease; }
     .chip, .seg button { transition: background 120ms ease; }
@@ -261,20 +279,39 @@
 
 <header>
   <div class="wrap">
-    <p class="eyebrow">APE Explorer · Section 106 review scope across 60 energy projects</p>
+    <p class="eyebrow">APE Explorer: an analysis of 60 energy projects and the scope of their NHPA Section 106 review areas by IFP</p>
     <h1>NHPA reviews disproportionately burden <span class="hl-clean">clean energy</span> and transmission</h1>
-    <p class="dek">Under Section&nbsp;106 of the National Historic Preservation Act, every federally permitted project gets a historic-preservation review. Its scope is set by an <strong>Area of Potential Effects</strong>, or <strong>APE</strong> — the zone the agency must examine for impacts on historic properties. The zones are wildly unequal. Revolution Wind's visual APE — a 40-mile viewshed drawn around the entire lease area — covers more than <strong>5,000 square miles</strong>. BLM put the onshore Lava Ridge wind project's non-physical APE at about <strong>2,800 square miles</strong>. The SunZia transmission line's APE — everything visible within 5 miles of any project component along its 550-mile route — spans up to <strong>5,500 square miles</strong>, more than twice the size of Delaware. And FERC put the total APE for a recent gas pipeline project, direct and indirect combined, at <strong>about 2 square miles</strong>. Fixing the rules behind that gap is a clean-energy win.</p>
+    <p class="dek">Under Section&nbsp;106 of the National Historic Preservation Act, every federally permitted project gets a historic-preservation review. Federal agencies begin by setting an <strong>Area of Potential Effects</strong>, or <strong>APE</strong> — the zone around the project that the agency must examine for impacts on historic properties, including visual impacts. There is no standard APE radius, and projects can receive wildly different zones to evaluate.</p>
+    <p class="dek">The APE for Revolution Wind, an offshore wind farm, extended 40 miles around the entire lease area, totaling more than <strong>5,000 square miles</strong>. The SunZia transmission line's APE included everything visible within 5 miles of any project component along its 550-mile route. That definition meant an APE that spans up to <strong>5,500 square miles</strong>, more than twice the size of Delaware. The total APE for a recent gas pipeline project was <strong>about 2 square miles</strong>. Reforming NHPA to right-size the APE is a clean-energy win by helping clean energy and transmission projects get built faster.</p>
     <div class="definition">
-      <p><strong>Why the gap: review scope scales with visibility.</strong> An APE is not just the project footprint — alongside the zone of ground disturbance, agencies add a visual-effects zone extending as far as the project can be seen. Wind turbines and transmission towers are tall by necessity, so their visual APEs stretch for miles. Gas pipelines are buried and compressor stations are low-profile, so their APEs typically end at half a mile or where line of sight is blocked.</p>
-      <p>Why that matters: the APE sets the scope of the agency's identification effort. A larger APE can mean more research, consultation, property evaluations, time, and litigation risk.</p>
+      <p><strong>Why the gap: review scope scales with visibility.</strong> An APE is not just the project footprint. Alongside the zone of ground disturbance, agencies add a visual-effects zone extending as far as the project can be seen. Wind turbines and transmission towers are tall by necessity, so their visual APEs stretch for miles. Gas pipelines are buried and compressor stations are low-profile, so their APEs typically end at half a mile or where line of sight is blocked.</p>
+      <p>Why that matters: A larger APE can mean more research, consultation, property evaluations, time, and litigation risk.</p>
     </div>
   </div>
 </header>
 
 <section>
   <div class="wrap">
+    <figure class="card">
+      <h3>What an “adverse effect” can look like</h3>
+      <p class="sub">Depicted is the present condition; hovering or tapping reveals the “adverse effect” that distant wind turbines from the Lava Ridge Wind Project — inside the red circle — would have on the Minidoka historic property.</p>
+      <div class="hover-compare" id="minidoka-compare" tabindex="0" role="button" aria-pressed="false"
+        aria-label="Toggle between the existing view from the Minidoka National Historic Site visitor center and BLM's simulation showing the Lava Ridge project's wind turbines on the distant horizon inside a red highlight ellipse.">
+        <span class="hover-hint" id="minidoka-hint" aria-hidden="true">Hover or tap to reveal the adverse effect</span>
+        <img src="https://ifp.org/wp-content/uploads/image-72.png" width="2044" height="1360" loading="lazy"
+          alt="Photograph of the view from the Minidoka National Historic Site visitor center: open farmland, a dirt ballfield, and transmission poles under a blue sky. Labeled: existing condition.">
+        <img class="after" src="https://ifp.org/wp-content/uploads/image-71.png" width="2048" height="1357" loading="lazy" aria-hidden="true"
+          alt="">
+      </div>
+      <figcaption>Minidoka National Historic Site visitor center — BLM visual simulation for the Lava Ridge Wind Project (Key Observation Point 1, worst-case condition, preferred alternative).</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2>Why the size of an APE matters</h2>
-    <p class="section-note">Section 106 is a procedural law: it requires agencies to consider effects on historic properties, but it does not require preservation or any particular outcome. Even so, the boundary an agency draws can determine how much work is required before the agency can make its decision.</p>
+    <p class="section-note">Section 106 is a procedural law: it requires agencies to consider effects on historic properties, but it does not require preservation, mitigation, or any other particular outcome. An overlarge APE adds delay, work, and expense — and even influences whether projects are proposed at all.</p>
     <div class="consequence-grid">
       <article class="consequence">
         <span class="num">1</span>
@@ -298,12 +335,11 @@
 <section>
   <div class="wrap">
     <h2>How much land can a visual APE encompass?</h2>
-    <p class="section-note">Each ring shows the median stated indirect or visual APE distance for a project category, drawn to a common scale. A 40-mile radius encloses about 5,000 square miles — larger than Los Angeles County. A half-mile radius encloses about 0.8 square miles — about three-fifths of Central Park.</p>
+    <p class="section-note">Each ring shows the median indirect or visual APE distance for a project category. A 40-mile radius encloses about 5,000 square miles — larger than Los Angeles County. A half-mile radius encloses about 0.8 square miles — about three-fifths of Central Park.</p>
     <figure class="card">
       <h3>Radius comparison by project category</h3>
-      <p class="sub">Rings drawn to a common scale — bigger radius means a larger reviewed area</p>
       <div class="scrollx" id="circles-holder"></div>
-      <figcaption>Median stated indirect or visual APE distance by category. These circles illustrate the area associated with each radius; actual APEs account for project geometry, terrain, line of sight, and different kinds of effects. Onshore wind is represented by one project, Lava Ridge, whose non-physical APE was a 20-mile-wide corridor.</figcaption>
+      <figcaption>Median indirect or visual APE distance by category. These circles illustrate the area associated with each radius; actual APEs account for project geometry, terrain, line of sight, and different kinds of effects.</figcaption>
     </figure>
     <div class="tiles">
       <div class="tile">
@@ -317,7 +353,7 @@
         <div class="t-sub">around aboveground facilities, 20 projects with a stated figure</div>
       </div>
       <div class="tile">
-        <div class="t-label">Area of a full circle at those radii</div>
+        <div class="t-label">Disparity in APE scope</div>
         <div class="t-value">6,400×</div>
         <div class="t-sub">≈5,000 sq mi vs ≈0.8 sq mi; actual APE shapes vary</div>
       </div>
@@ -333,20 +369,20 @@
 <section>
   <div class="wrap prose">
     <h2>The disparity is built into the rules</h2>
-    <p class="section-note">None of this requires assuming bad faith by agencies. They scale visual review to how far a project can be seen — and clean-energy infrastructure is tall, so a facially neutral rule produces review areas that differ by orders of magnitude.</p>
-    <p>A review system that scales with visibility concentrates its broadest reach, longest timelines, and greatest litigation exposure on wind generation and the transmission lines needed to carry electricity — the projects a clean-energy buildout requires most. Visual effects on historic properties deserve consideration. The live question for Congress is whether the geographic scope and legal consequences of that consideration are clear, consistent, and proportionate to effects on actual historic properties.</p>
+    <p class="section-note">Agencies aren't trying to burden clean energy in their NHPA administration. Because visual review is pegged, by regulation, to how far a project can be seen (and clean-energy infrastructure is tall), a facially neutral rule produces much larger review areas for these projects.</p>
+    <p>A review system that scales with visibility exposes renewable energy generation and transmission to longer delays and greater litigation exposure. These are the projects a clean-energy buildout requires. Treating these projects fairly doesn't require ignoring all visual effects on historic properties. The question for Congress is whether the geographic scope and legal consequences of that consideration are clear, consistent, and proportionate to effects on actual historic properties.</p>
   </div>
 </section>
 
 <section class="policy">
   <div class="wrap">
-    <h2>What Congress should change — and who gains</h2>
-    <p class="section-note">Congress can make APE determinations more consistent and proportionate while preserving review of genuine effects on historic properties. The distributional math matters for anyone whose priority is clean energy: gas and LNG review areas are already small, so uniform limits change little for them. The gains from each reform below go overwhelmingly to wind, solar, and transmission.</p>
+    <h2>What Congress should change — and who benefits</h2>
+    <p class="section-note">Congress can make APE determinations more consistent and proportionate while preserving review of genuine effects on historic properties. Reform benefits clean energy projects most: gas and LNG review areas are already small, so setting maximum APE scope changes little for them. The gains from each reform below go overwhelmingly to wind, solar, and transmission projects.</p>
     <div class="reform-grid">
       <article class="reform">
         <span class="num">1</span>
         <h3>Set a clear visual-effects limit</h3>
-        <p>Establish a bright-line limit on visual APEs — such as three miles — or direct the Advisory Council on Historic Preservation to adopt an FCC-style distance schedule.</p>
+        <p>Establish a bright-line limit on visual APEs — such as three miles — or direct the Advisory Council on Historic Preservation to adopt such a limit by regulation as they have done for tall FCC-permitted telecom infrastructure.</p>
       </article>
       <article class="reform">
         <span class="num">2</span>
@@ -395,7 +431,7 @@
 
 <section>
   <div class="wrap">
-    <h2>Above two miles, it is almost all clean energy</h2>
+    <h2>Almost all projects forced to evaluate a visual range of two miles or more are clean energy projects</h2>
     <p class="section-note">The 38 projects whose public Section 106 or NEPA documents state an indirect or visual distance, ranked. Every figure above two miles belongs to a clean-energy project except Rio Grande LNG's 12-mile indirect <em>study area</em>, which its EIS does not describe as a defined APE.</p>
     <figure class="card">
       <h3>Indirect or visual APE distance, ranked</h3>
@@ -445,27 +481,23 @@
     <h2>About the data</h2>
     <p>This first-pass pilot dataset covers 60 federal energy-project reviews, primarily from January 1, 2021 through June 27, 2026, plus several earlier comparators. It draws from FERC environmental reviews for gas and LNG projects; BOEM findings and agreements for offshore wind; and BLM agreements, treatment plans, and environmental reviews for wind, solar, and transmission projects.</p>
 
-    <h3>The coding rule is conservative</h3>
-    <div class="rule">A project is not treated as having a quantified APE unless an official public source states the APE definition, acreage, route width, buffer distance, viewshed radius, or equivalent measure. Missing public evidence is coded as <em>not publicly available</em> — never as zero burden.</div>
-    <p>That rule cuts against the thesis where it binds: several gas projects with no stated figure may have modest APEs that simply were not published, and they are shown as blank, not as small.</p>
-
-    <h3>Read the numbers with these caveats</h3>
+    <h3>Caveats</h3>
     <ul>
       <li><strong>Pilot status.</strong> Figures are coded from extracted document text and should be verified against the underlying PDFs before publication or citation.</li>
       <li><strong>Mixed measures.</strong> "Direct APE" acreages mix defined APEs, surveyed areas, and disturbance footprints; corridor widths are converted to half-width from centerline. The table preserves each source's own wording.</li>
+      <li><strong>Missing APEs.</strong> A project is not treated as having a quantified APE unless an official public source states the APE definition, acreage, route width, buffer distance, viewshed radius, or equivalent measure. Missing public evidence is coded as <em>not publicly available</em>. That rule is conservative since several gas projects with no stated figure likely have modest APEs that simply were not published, and they are shown as blank, not as small.</li>
       <li><strong>Document types differ.</strong> BOEM/BLM projects surface APE detail in Section 106 agreement documents; FERC projects surface it in EA/EIS text. Detail published, not just review conducted, varies by agency practice.</li>
       <li><strong>Outcome coding.</strong> "Adverse effects / mitigation" means the public record shows an adverse-effect finding, MOA, treatment plan, or equivalent obligations; "consultation &amp; avoidance" means measures short of that; three gas projects remained unresolved with completion conditions. "No adverse-effect finding or mitigation located" does not mean the project incurred no compliance burden.</li>
-      <li><strong>The outlier is included.</strong> Rio Grande LNG's 12-mile indirect study area is the largest gas-side figure and is shown, not dropped.</li>
     </ul>
 
     <h3>Section 106 in brief</h3>
-    <p>Section 106 requires agencies to take into account an undertaking's effects on properties listed or eligible for the National Register of Historic Places, in consultation with SHPOs, THPOs, Tribes, and the Advisory Council on Historic Preservation. It is procedural — it requires consideration and consultation, not preservation or any particular result. Within the APE, the agency must make a reasonable and good-faith identification effort, evaluate identified properties that have not already been evaluated, and assess adverse effects where historic properties may be affected.</p>
+    <p>Section 106 requires agencies to take into account an undertaking's effects on properties listed or eligible for the National Register of Historic Places, in consultation with Historic Preservation Officers, Tribes, and the Advisory Council on Historic Preservation. It is procedural — it requires consideration and consultation, not preservation or any particular result. Within the APE, the agency must make a reasonable and good-faith identification effort, evaluate identified properties that have not already been evaluated, and assess adverse effects where historic properties may be affected.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    APE Explorer · pilot dataset compiled July 2026 · Institute for Progress · Sources: public FERC, BOEM, and BLM review documents. Draft for internal review — verify figures against source PDFs before citation.
+    APE Explorer · pilot dataset compiled July 2026 · Institute for Progress · Sources: public FERC, BOEM, and BLM review documents.
   </div>
 </footer>
 
@@ -784,10 +816,10 @@
   ];
 
   var OUTCOME = {
-    adverse: { label: "Adverse effects / mitigation", color: "var(--crit)", icon: "▲" },
-    consult: { label: "Consultation & avoidance", color: "var(--warn)", icon: "●" },
-    pending: { label: "Unresolved / conditions", color: "var(--serious)", icon: "◐" },
-    none:    { label: "No adverse-effect finding or mitigation located", color: "var(--good)", icon: "○" }
+    adverse: { label: "Adverse effects / mitigation", color: "var(--crit)" },
+    consult: { label: "Consultation & avoidance", color: "var(--warn)" },
+    pending: { label: "Unresolved / conditions", color: "var(--serious)" },
+    none:    { label: "No adverse-effect finding or mitigation located", color: "var(--good)" }
   };
   var GROUP = { c: { name: "Clean energy", color: "var(--clean)" }, g: { name: "Natural gas & LNG", color: "var(--gas)" } };
 
@@ -1175,7 +1207,7 @@
       var td0 = document.createElement("td");
       var pill = document.createElement("span"); pill.className = "pill";
       var pd = document.createElement("span"); pd.className = "pd"; pd.style.background = OUTCOME[o].color;
-      pill.appendChild(pd); pill.appendChild(document.createTextNode(OUTCOME[o].icon + " " + OUTCOME[o].label));
+      pill.appendChild(pd); pill.appendChild(document.createTextNode(OUTCOME[o].label));
       td0.appendChild(pill); tr.appendChild(td0);
       ["c", "g"].forEach(function (g) {
         var td = document.createElement("td");
@@ -1205,7 +1237,7 @@
     outcomes: {
       title: "How the reviews ended",
       sub: "Share of projects whose public record shows adverse-effect findings, MOAs, treatment plans, or equivalent mitigation obligations.",
-      caption: "Outcomes coded from the evidence register. “Unresolved / conditions” covers three gas projects whose Section 106 review was incomplete at approval, with completion or no-construction conditions attached.",
+      caption: "Outcomes coded from the evidence register. “Unresolved / conditions” covers three gas projects whose Section 106 review was incomplete at approval.",
       legend: false, render: renderOutcomes
     }
   };
@@ -1292,6 +1324,29 @@
   document.getElementById("q").addEventListener("input", function (e) {
     filterState.q = e.target.value; renderTable();
   });
+
+  // ---------- Minidoka before/after compare ----------
+  var cmp = document.getElementById("minidoka-compare");
+  if (cmp) {
+    var hint = document.getElementById("minidoka-hint");
+    var HINT_OFF = "Hover or tap to reveal the adverse effect";
+    var HINT_ON = "Simulated worst-case condition — Lava Ridge turbines in red circle";
+    var setCmp = function (on) {
+      cmp.classList.toggle("show", on);
+      cmp.setAttribute("aria-pressed", on ? "true" : "false");
+      hint.textContent = on ? HINT_ON : HINT_OFF;
+    };
+    cmp.addEventListener("click", function () { setCmp(!cmp.classList.contains("show")); });
+    cmp.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setCmp(!cmp.classList.contains("show")); }
+    });
+    cmp.addEventListener("pointerenter", function (e) {
+      if (e.pointerType === "mouse") hint.textContent = HINT_ON;
+    });
+    cmp.addEventListener("pointerleave", function (e) {
+      if (e.pointerType === "mouse" && !cmp.classList.contains("show")) hint.textContent = HINT_OFF;
+    });
+  }
 
   // ---------- init ----------
   renderCircles();
