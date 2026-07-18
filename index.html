@@ -80,9 +80,16 @@
   /* ---------- Hero ---------- */
   header { padding: 72px 0 40px; }
   .eyebrow {
-    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--muted); margin: 0 0 18px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0;
+    color: var(--muted); margin: 0 0 18px;
   }
+  .eyebrow a {
+    color: inherit; text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px; background-position: 0 100%; background-repeat: no-repeat;
+    padding-bottom: 1px;
+  }
+  .eyebrow a:hover, .eyebrow a:focus-visible { background-size: 100% 1px; }
   h1 {
     font-family: Georgia, "Times New Roman", serif;
     font-weight: 400;
@@ -265,6 +272,7 @@
   @media (prefers-reduced-motion: no-preference) {
     .bar-mark { transition: filter 120ms ease; }
     .chip, .seg button { transition: background 120ms ease; }
+    .eyebrow a { transition: background-size 320ms cubic-bezier(0.22, 1, 0.36, 1); }
   }
   @media (max-width: 640px) {
     header { padding-top: 48px; }
@@ -279,10 +287,10 @@
 
 <header>
   <div class="wrap">
-    <p class="eyebrow">APE Explorer: an analysis of 60 energy projects and the scope of their NHPA Section 106 review areas by IFP</p>
+    <p class="eyebrow">APE Explorer: An analysis of 60 energy projects and the scope of their NHPA Section 106 review areas by <a href="https://ifp.org/">IFP</a></p>
     <h1>NHPA reviews disproportionately burden <span class="hl-clean">clean energy</span> and transmission</h1>
     <p class="dek">Under Section&nbsp;106 of the National Historic Preservation Act, every federally permitted project gets a historic-preservation review. Federal agencies begin by setting an <strong>Area of Potential Effects</strong>, or <strong>APE</strong> — the zone around the project that the agency must examine for impacts on historic properties, including visual impacts. There is no standard APE radius, and projects can receive wildly different zones to evaluate.</p>
-    <p class="dek">The APE for Revolution Wind, an offshore wind farm, extended 40 miles around the entire lease area, totaling more than <strong>5,000 square miles</strong>. The SunZia transmission line's APE included everything visible within 5 miles of any project component along its 550-mile route. That definition meant an APE that spans up to <strong>5,500 square miles</strong>, more than twice the size of Delaware. The total APE for a recent gas pipeline project was <strong>about 2 square miles</strong>. Reforming NHPA to right-size the APE is a clean energy win.</p>
+    <p class="dek">The APE for Revolution Wind, an offshore wind farm, extended 40 miles around the entire lease area, totaling more than <strong>5,000 square miles</strong>. The SunZia transmission line's APE included everything visible within 5 miles of any project component along its 550-mile route. That definition meant an APE that spans up to <strong>5,500 square miles</strong>, more than twice the size of Delaware. The total APE for a recent gas pipeline project was <strong>about 2 square miles</strong>. Reforming NHPA to right-size the APE is a clean-energy win by helping clean energy and transmission projects get built faster.</p>
     <div class="definition">
       <p><strong>Why the gap: review scope scales with visibility.</strong> An APE is not just the project footprint. Alongside the zone of ground disturbance, agencies add a visual-effects zone extending as far as the project can be seen. Wind turbines and transmission towers are tall by necessity, so their visual APEs stretch for miles. Gas pipelines are buried and compressor stations are low-profile, so their APEs typically end at half a mile or where line of sight is blocked.</p>
       <p>Why that matters: A larger APE can mean more research, consultation, property evaluations, time, and litigation risk.</p>
@@ -431,7 +439,7 @@
 
 <section>
   <div class="wrap">
-    <h2>Almost all projects in the set with an APE of two miles or more are clean energy projects</h2>
+    <h2>Almost all projects forced to evaluate a visual range of two miles or more are clean energy projects</h2>
     <p class="section-note">The 38 projects whose public Section 106 or NEPA documents state an indirect or visual distance, ranked. Every figure above two miles belongs to a clean-energy project except Rio Grande LNG's 12-mile indirect <em>study area</em>, which its EIS does not describe as a defined APE.</p>
     <figure class="card">
       <h3>Indirect or visual APE distance, ranked</h3>
