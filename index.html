@@ -4,63 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Section 106 review zones for clean energy run 40 miles; for gas, half a mile. Explore 60 federal reviews and why NHPA reform is a clean-energy win.">
-<title>APE Explorer | Section 106 Review Scope</title>
+<title>APE Explorer | A project by the Institute for Progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@800&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --page: #f7f7f4;
-    --surface: #fcfcfb;
-    --ink: #0b0b0b;
-    --ink-2: #454440;
-    --muted: #53514e;
-    --grid: #e1e0d9;
-    --axis: #c3c2b7;
-    --border: rgba(11,11,11,0.10);
+    --page: #ffffff;
+    --surface: #ffffff;
+    --ink: #1b2128;
+    --ink-2: #3d434c;
+    --muted: #4d5560;
+    --grid: #e5e7eb;
+    --axis: #c9c9d9;
+    --border: #c9c9d9;
     --clean: #2a78d6;
     --gas: #eb6834;
-    --accent-text: #184f95;
-    --clean-wash: rgba(42,120,214,0.10);
-    --gas-wash: rgba(235,104,52,0.12);
-    --chip-bg: rgba(11,11,11,0.05);
+    --accent: #2563eb;
+    --accent-text: #1e40af;
+    --accent-wash: #eff6ff;
+    --callout: #fff0b8;
+    --clean-wash: rgba(42,120,214,0.08);
+    --gas-wash: rgba(235,104,52,0.10);
+    --chip-bg: #eff6ff;
     --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
-    --ring-2: #128a60; --ring-3: #a56d00; --ring-4: #006300;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --page: #0d0d0d;
-      --surface: #1a1a19;
-      --ink: #ffffff;
-      --ink-2: #c3c2b7;
-      --muted: #aaa8a0;
-      --grid: #2c2c2a;
-      --axis: #383835;
-      --border: rgba(255,255,255,0.10);
-      --clean: #3987e5;
-      --gas: #d95926;
-      --accent-text: #86b6ef;
-      --clean-wash: rgba(57,135,229,0.16);
-      --gas-wash: rgba(217,89,38,0.18);
-      --chip-bg: rgba(255,255,255,0.07);
-      --ring-2: #199e70; --ring-3: #c98500; --ring-4: #008300;
-    }
-  }
-  :root[data-theme="dark"] {
-    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7;
-    --muted: #aaa8a0; --grid: #2c2c2a; --axis: #383835;
-    --border: rgba(255,255,255,0.10);
-    --clean: #3987e5; --gas: #d95926;
-    --accent-text: #86b6ef;
-    --clean-wash: rgba(57,135,229,0.16); --gas-wash: rgba(217,89,38,0.18);
-    --chip-bg: rgba(255,255,255,0.07);
-    --ring-2: #199e70; --ring-3: #c98500; --ring-4: #008300;
-  }
-  :root[data-theme="light"] {
-    --page: #f7f7f4; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #454440;
-    --muted: #53514e; --grid: #e1e0d9; --axis: #c3c2b7;
-    --border: rgba(11,11,11,0.10);
-    --clean: #2a78d6; --gas: #eb6834;
-    --accent-text: #184f95;
-    --clean-wash: rgba(42,120,214,0.10); --gas-wash: rgba(235,104,52,0.12);
-    --chip-bg: rgba(11,11,11,0.05);
     --ring-2: #128a60; --ring-3: #a56d00; --ring-4: #006300;
   }
 
@@ -69,59 +36,83 @@
     margin: 0;
     background: var(--page);
     color: var(--ink);
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
   .prose { max-width: 68ch; }
 
-  /* ---------- Hero ---------- */
-  header { padding: 72px 0 40px; }
-  .eyebrow {
-    font-size: 12px; font-weight: 600; letter-spacing: 0;
-    color: var(--muted); margin: 0 0 18px;
+  /* ---------- Masthead ---------- */
+  .masthead { text-align: center; padding: 46px 0 6px; }
+  .masthead .brand {
+    font-family: "Hepta Slab", Georgia, serif; font-weight: 800;
+    font-size: clamp(32px, 4.5vw, 42px); line-height: 1.1;
+    letter-spacing: -0.01em; color: var(--ink); margin: 0;
   }
-  .eyebrow a {
+  .masthead .project {
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin: 8px 0 0;
+  }
+  .masthead .project a, .site-foot .project a {
     color: inherit; text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 0% 1px; background-position: 0 100%; background-repeat: no-repeat;
     padding-bottom: 1px;
   }
-  .eyebrow a:hover, .eyebrow a:focus-visible { background-size: 100% 1px; }
+  .masthead .project a:hover, .masthead .project a:focus-visible,
+  .site-foot .project a:hover, .site-foot .project a:focus-visible { background-size: 100% 1px; }
+  .masthead .tagline { font-size: 14.5px; color: var(--muted); margin: 10px auto 0; max-width: 64ch; }
+  .masthead nav { margin: 26px 0 0; display: flex; justify-content: center; gap: 38px; }
+  .masthead nav a {
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 17px; font-weight: 500; color: var(--ink); text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat;
+    padding-bottom: 2px;
+  }
+  .masthead nav a:hover, .masthead nav a:focus-visible { background-size: 100% 2px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 58px 0 42px; }
   h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: clamp(34px, 5.4vw, 54px);
-    line-height: 1.12;
-    letter-spacing: -0.01em;
-    margin: 0 0 20px;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 4.6vw, 46px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 auto 24px;
     text-wrap: balance;
-    max-width: 22ch;
+    max-width: 24ch;
+    text-align: center;
   }
   h1 .hl-clean { color: var(--accent-text); }
   h1 .hl-gas { color: var(--gas); }
-  .dek { font-size: 18.5px; color: var(--ink-2); max-width: 62ch; margin: 0; }
-  .dek + .dek { margin-top: 12px; }
-  .dek strong { color: var(--ink); font-weight: 600; }
+  .dek { font-size: 18px; color: var(--ink-2); max-width: 66ch; margin: 0 auto; }
+  .dek + .dek { margin-top: 14px; }
+  .dek strong { color: var(--ink); font-weight: 700; }
 
   .tiles { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
   .tile {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 8px; padding: 16px 20px 14px; flex: 1 1 220px; min-width: 200px;
+    border-radius: 10px; padding: 16px 20px 14px; flex: 1 1 220px; min-width: 200px;
   }
-  .tile .t-label { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
-  .tile .t-value { font-size: 34px; font-weight: 600; line-height: 1.1; }
-  .tile .t-sub { font-size: 12.5px; color: var(--ink-2); margin-top: 4px; }
+  .tile .t-label { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  .tile .t-value {
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 34px; font-weight: 700; line-height: 1.1;
+  }
+  .tile .t-sub { font-size: 13px; color: var(--ink-2); margin-top: 4px; }
   .tile .t-value .unit { font-size: 18px; font-weight: 500; color: var(--ink-2); }
   .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: baseline; }
   .dot.c { background: var(--clean); } .dot.g { background: var(--gas); }
 
   .definition {
-    margin: 30px 0 0; padding: 20px 22px; max-width: 72ch;
-    background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--clean);
-    border-radius: 8px; color: var(--ink-2);
+    margin: 32px auto 0; padding: 20px 24px; max-width: 72ch;
+    background: var(--callout); border: 0;
+    border-radius: 10px; color: var(--ink); text-align: left;
   }
   .definition strong { color: var(--ink); }
   .definition p { margin: 0; }
@@ -131,55 +122,69 @@
     display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
   }
   .consequence, .reform {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 18px 18px 16px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 18px 16px;
   }
   .consequence .num, .reform .num {
     display: inline-grid; place-items: center; width: 28px; height: 28px; margin-bottom: 10px;
-    border-radius: 50%; background: var(--clean-wash); color: var(--clean); font-size: 13px; font-weight: 700;
+    border-radius: 50%; background: var(--accent-wash); color: var(--accent-text); font-size: 13px; font-weight: 700;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
   }
-  .consequence h3, .reform h3 { margin: 0 0 6px; font-size: 15.5px; line-height: 1.25; }
-  .consequence p, .reform p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .consequence h3, .reform h3 {
+    margin: 0 0 6px; font-size: 16px; line-height: 1.25;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif; font-weight: 700;
+  }
+  .consequence p, .reform p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
   .policy {
-    background: linear-gradient(135deg, var(--clean-wash), transparent 72%);
-    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--accent-wash), transparent 72%);
+    border-top: 1px solid var(--grid); border-bottom: 1px solid var(--grid);
   }
   .policy .section-note { max-width: 76ch; }
   .reform-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cta {
-    margin-top: 18px; padding: 15px 18px; border-radius: 8px; background: var(--ink); color: var(--page);
+    margin-top: 18px; padding: 18px 20px; border-radius: 10px; background: var(--accent-wash);
+    border: 1px solid var(--border);
     display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
   }
-  .cta p { margin: 0; font-size: 14px; max-width: 68ch; }
-  .cta a { color: var(--page); font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; white-space: nowrap; }
+  .cta p { margin: 0; font-size: 14.5px; max-width: 68ch; color: var(--ink); }
+  .cta a {
+    display: inline-block; background: var(--ink); color: #ffffff; font-weight: 650;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    padding: 10px 20px; border-radius: 999px; text-decoration: none; white-space: nowrap;
+  }
+  .cta a:hover, .cta a:focus-visible { background: #000000; }
   .plain-link { text-underline-offset: 3px; }
 
   /* ---------- Sections ---------- */
-  section { padding: 34px 0; }
+  section { padding: 36px 0; }
   h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400; font-size: 29px; line-height: 1.2;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700; font-size: 29px; line-height: 1.2;
     margin: 0 0 10px; text-wrap: balance;
   }
   .section-note { color: var(--ink-2); max-width: 68ch; margin: 0 0 22px; }
   .card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 22px 24px 18px;
+    border-radius: 10px; padding: 22px 24px 18px; position: relative;
   }
-  .card h3 { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
-  .card .sub { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+  .card h3 {
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 17px; font-weight: 700; margin: 0 0 2px;
+  }
+  .card .sub { font-size: 13.5px; color: var(--muted); margin: 0 0 14px; max-width: 62ch; }
+  .ifp-logo { position: absolute; top: 20px; right: 22px; height: 20px; width: auto; }
   .scrollx { overflow-x: auto; }
-  figcaption, .caption { font-size: 12.5px; color: var(--muted); margin-top: 10px; max-width: 78ch; }
+  figcaption, .caption { font-size: 13px; color: var(--muted); margin-top: 10px; max-width: 78ch; }
   figure { margin: 0; }
 
-  .hover-compare { position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); cursor: pointer; display: block; }
+  .hover-compare { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); cursor: pointer; display: block; }
   .hover-compare img { width: 100%; height: auto; display: block; }
   .hover-compare .after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
   .hover-compare:hover .after, .hover-compare:focus-visible .after, .hover-compare.show .after { opacity: 1; }
-  .hover-compare:focus-visible { outline: 2px solid var(--clean); outline-offset: 2px; }
-  @media (prefers-reduced-motion: no-preference) { .hover-compare .after { transition: opacity 200ms ease; } }
+  .hover-compare:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .hover-hint {
     position: absolute; top: 10px; left: 10px; z-index: 2; pointer-events: none;
-    background: rgba(11,11,11,0.72); color: #ffffff; font-size: 12.5px; font-weight: 600;
+    background: rgba(27,33,40,0.78); color: #ffffff; font-size: 12.5px; font-weight: 600;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
     padding: 5px 11px; border-radius: 999px;
   }
 
@@ -188,21 +193,26 @@
   .swatch { width: 14px; height: 10px; border-radius: 2px; display: inline-block; }
   .swatch.c { background: var(--clean); } .swatch.g { background: var(--gas); }
 
-  /* ---------- Segmented control ---------- */
+  /* ---------- Segmented control (IFP tab style) ---------- */
   .seg {
-    display: inline-flex; gap: 0; border: 1px solid var(--border);
-    border-radius: 8px; overflow: hidden; margin: 0 0 18px; background: var(--surface);
+    display: flex; gap: 0; border: 1px solid var(--border);
+    border-radius: 0; overflow: hidden; margin: 0 0 18px; background: var(--surface); width: 100%;
   }
   .seg button {
     appearance: none; border: 0; background: transparent; color: var(--ink-2);
-    font: inherit; font-size: 13.5px; font-weight: 500; padding: 8px 16px; cursor: pointer;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 13.5px; font-weight: 500; padding: 12px 12px; cursor: pointer; flex: 1 1 0;
+    border-bottom: 3px solid transparent;
   }
   .seg button + button { border-left: 1px solid var(--border); }
-  .seg button[aria-pressed="true"] { background: var(--chip-bg); color: var(--ink); font-weight: 600; }
-  .seg button:focus-visible { outline: 2px solid var(--clean); outline-offset: -2px; }
+  .seg button[aria-pressed="true"] {
+    background: var(--accent-wash); color: var(--accent-text); font-weight: 600;
+    border-bottom-color: var(--accent);
+  }
+  .seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
   /* ---------- SVG chart chrome ---------- */
-  svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  svg text { font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif; }
   .bar-hit { fill: transparent; cursor: default; }
   .bar-hit:focus-visible { outline: none; }
   .bar-hit:focus-visible + .bar-mark, .row-hover .bar-mark { filter: brightness(1.12); }
@@ -213,11 +223,11 @@
   /* ---------- Tooltip ---------- */
   #tip {
     position: fixed; z-index: 50; pointer-events: none; display: none;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(27,33,40,0.14);
     padding: 10px 13px; max-width: 320px; font-size: 12.5px; line-height: 1.45;
   }
-  #tip .tp-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; display: flex; align-items: center; gap: 7px; }
+  #tip .tp-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; display: flex; align-items: center; gap: 7px; font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif; }
   #tip .tp-key { width: 12px; height: 3px; border-radius: 2px; flex: 0 0 auto; }
   #tip .tp-type { color: var(--muted); margin-bottom: 6px; }
   #tip .tp-row { color: var(--ink-2); margin-top: 4px; }
@@ -228,23 +238,26 @@
   .filters { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
   .chip {
     appearance: none; border: 1px solid var(--border); background: var(--surface);
-    color: var(--ink-2); font: inherit; font-size: 13px; font-weight: 500;
-    border-radius: 999px; padding: 5px 14px; cursor: pointer;
+    color: var(--ink-2); font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 13px; font-weight: 500;
+    border-radius: 999px; padding: 6px 15px; cursor: pointer;
   }
-  .chip[aria-pressed="true"] { background: var(--chip-bg); color: var(--ink); font-weight: 600; border-color: var(--axis); }
-  .chip:focus-visible { outline: 2px solid var(--clean); outline-offset: 1px; }
+  .chip[aria-pressed="true"] { background: var(--accent-wash); color: var(--accent-text); font-weight: 600; border-color: var(--accent); }
+  .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .search {
     font: inherit; font-size: 13.5px; color: var(--ink);
     background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
     padding: 7px 12px; min-width: 220px; flex: 1 1 220px; max-width: 320px;
   }
-  .search:focus-visible { outline: 2px solid var(--clean); outline-offset: 0; }
+  .search:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
+  .search::placeholder { color: var(--muted); opacity: 1; }
   .count-note { font-size: 12.5px; color: var(--muted); margin-left: auto; }
 
   table { border-collapse: collapse; width: 100%; font-size: 13px; }
   thead th {
     text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em;
     color: var(--muted); font-weight: 600; padding: 8px 12px 8px 0;
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
     border-bottom: 1px solid var(--axis); white-space: nowrap;
   }
   tbody td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--grid); vertical-align: top; color: var(--ink-2); }
@@ -255,29 +268,49 @@
   .pill .pd { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
 
   /* ---------- Methodology ---------- */
-  .method h3 { font-size: 15.5px; font-weight: 600; margin: 22px 0 6px; }
+  .method h3 {
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px; font-weight: 700; margin: 22px 0 6px;
+  }
   .method p, .method li { color: var(--ink-2); font-size: 14.5px; }
   .method .rule {
     border-left: 3px solid var(--axis); padding: 2px 0 2px 16px; margin: 14px 0;
     color: var(--ink-2); font-size: 14.5px;
   }
-  footer { padding: 28px 0 64px; color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--grid); margin-top: 30px; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 48px 0 72px; border-top: 1px solid var(--grid); margin-top: 30px; }
+  .site-foot { text-align: center; }
+  .site-foot .brand {
+    font-family: "Hepta Slab", Georgia, serif; font-weight: 800;
+    font-size: clamp(26px, 3.6vw, 34px); color: var(--ink); margin: 0;
+  }
+  .site-foot .project {
+    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin: 8px 0 0;
+  }
+  .site-foot .credit { font-size: 12.5px; color: var(--muted); margin: 22px 0 0; }
 
   /* ---------- Breakdown mini-table ---------- */
   .mini { font-size: 13px; margin-top: 16px; }
   .mini td, .mini th { padding: 6px 14px 6px 0; }
 
   a { color: var(--accent-text); }
-  .search::placeholder { color: var(--muted); opacity: 1; }
   @media (prefers-reduced-motion: no-preference) {
     .bar-mark { transition: filter 120ms ease; }
     .chip, .seg button { transition: background 120ms ease; }
-    .eyebrow a { transition: background-size 320ms cubic-bezier(0.22, 1, 0.36, 1); }
+    .masthead .project a, .masthead nav a, .site-foot .project a { transition: background-size 320ms cubic-bezier(0.22, 1, 0.36, 1); }
+    .hover-compare .after { transition: opacity 200ms ease; }
   }
   @media (max-width: 640px) {
-    header { padding-top: 48px; }
+    .masthead { padding-top: 34px; }
+    .hero { padding-top: 40px; }
     .card { padding: 16px 14px 12px; }
     .consequence-grid, .reform-grid { grid-template-columns: 1fr; }
+    .ifp-logo { display: none; }
+    .seg { flex-wrap: wrap; }
+    .seg button { flex: 1 1 100%; border-left: 0 !important; border-top: 1px solid var(--border); }
   }
 </style>
 </head>
@@ -286,8 +319,13 @@
 <div id="tip" role="status" aria-hidden="true"></div>
 
 <header>
-  <div class="wrap">
-    <p class="eyebrow">APE Explorer: An analysis of 60 energy projects and the scope of their NHPA Section 106 review areas by <a href="https://ifp.org/">IFP</a></p>
+  <div class="wrap masthead">
+    <p class="brand">APE Explorer</p>
+    <p class="project">A project by the <a href="https://ifp.org/">Institute for Progress</a></p>
+    <p class="tagline">An analysis of 60 energy projects and the scope of their NHPA Section&nbsp;106 review areas</p>
+    <nav aria-label="Site"><a href="#explore">Explore</a><a href="#about">About the data</a></nav>
+  </div>
+  <div class="wrap hero">
     <h1>NHPA reviews disproportionately burden <span class="hl-clean">clean energy</span> and transmission</h1>
     <p class="dek">Under Section&nbsp;106 of the National Historic Preservation Act, every federally permitted project gets a historic-preservation review. Federal agencies begin by setting an <strong>Area of Potential Effects</strong>, or <strong>APE</strong> — the zone around the project that the agency must examine for impacts on historic properties, including visual impacts. There is no standard APE radius, and projects can receive wildly different zones to evaluate.</p>
     <p class="dek">The APE for Revolution Wind, an offshore wind farm, extended 40 miles around the entire lease area, totaling more than <strong>5,000 square miles</strong>. The SunZia transmission line's APE included everything visible within 5 miles of any project component along its 550-mile route. That definition meant an APE that spans up to <strong>5,500 square miles</strong>, more than twice the size of Delaware. The total APE for a recent gas pipeline project was <strong>about 2 square miles</strong>. Reforming NHPA to right-size the APE is a clean-energy win by helping clean energy and transmission projects get built faster.</p>
@@ -298,7 +336,7 @@
   </div>
 </header>
 
-<section>
+<section id="explore">
   <div class="wrap">
     <figure class="card">
       <h3>What an “adverse effect” can look like</h3>
@@ -345,7 +383,8 @@
     <h2>How much land can a visual APE encompass?</h2>
     <p class="section-note">Each ring shows the median indirect or visual APE distance for a project category. A 40-mile radius encloses about 5,000 square miles — larger than Los Angeles County. A half-mile radius encloses about 0.8 square miles — about three-fifths of Central Park.</p>
     <figure class="card">
-      <h3>Radius comparison by project category</h3>
+      <img class="ifp-logo" src="https://optobservatory.org/assets/RGB_IFP_Short_Black-DWAQ89D1.png" alt="IFP logo">
+            <h3>Radius comparison by project category</h3>
       <div class="scrollx" id="circles-holder"></div>
       <figcaption>Median indirect or visual APE distance by category. These circles illustrate the area associated with each radius; actual APEs account for project geometry, terrain, line of sight, and different kinds of effects.</figcaption>
     </figure>
@@ -425,6 +464,7 @@
       <button type="button" data-mode="acres" aria-pressed="false">Direct APE acreage</button>
     </div>
     <figure class="card" id="toggle-card">
+      <img class="ifp-logo" src="https://optobservatory.org/assets/RGB_IFP_Short_Black-DWAQ89D1.png" alt="IFP logo">
       <h3 id="tc-title">How the reviews ended</h3>
       <p class="sub" id="tc-sub">Share of projects whose public record shows adverse-effect findings, MOAs, treatment plans, or equivalent mitigation obligations.</p>
       <div class="legend" id="tc-legend">
@@ -439,10 +479,11 @@
 
 <section>
   <div class="wrap">
-    <h2>Almost all projects that evaluate a visual range of two miles or more are clean energy projects</h2>
+    <h2>Almost all projects forced to evaluate a visual range of two miles or more are clean energy projects</h2>
     <p class="section-note">The 38 projects whose public Section 106 or NEPA documents state an indirect or visual distance, ranked. Every figure above two miles belongs to a clean-energy project except Rio Grande LNG's 12-mile indirect <em>study area</em>, which its EIS does not describe as a defined APE.</p>
     <figure class="card">
-      <h3>Indirect or visual APE distance, ranked</h3>
+      <img class="ifp-logo" src="https://optobservatory.org/assets/RGB_IFP_Short_Black-DWAQ89D1.png" alt="IFP logo">
+            <h3>Indirect or visual APE distance, ranked</h3>
       <p class="sub">38 projects with a stated distance, in statute miles</p>
       <div class="legend">
         <span class="key"><span class="swatch c"></span>Clean energy (wind, solar, transmission)</span>
@@ -459,7 +500,8 @@
     <h2>Explore all 60 project reviews</h2>
     <p class="section-note">Search the underlying evidence register. Source descriptions and page references are reproduced as coded; missing public evidence is not treated as zero burden. <a class="plain-link" href="NHPA%20differential%20treatment%20pilot%20dataset%20-%20Evidence%20register.csv">Download the evidence register</a>.</p>
     <div class="card">
-      <h3>Evidence register</h3>
+      <img class="ifp-logo" src="https://optobservatory.org/assets/RGB_IFP_Short_Black-DWAQ89D1.png" alt="IFP logo">
+            <h3>Evidence register</h3>
       <p class="sub">All 60 project reviews — search or filter by category</p>
       <div class="filters">
         <button type="button" class="chip" data-f="all" aria-pressed="true">All projects</button>
@@ -484,7 +526,7 @@
   </div>
 </section>
 
-<section>
+<section id="about">
   <div class="wrap method prose">
     <h2>About the data</h2>
     <p>This first-pass pilot dataset covers 60 federal energy-project reviews, primarily from January 1, 2021 through June 27, 2026, plus several earlier comparators. It draws from FERC environmental reviews for gas and LNG projects; BOEM findings and agreements for offshore wind; and BLM agreements, treatment plans, and environmental reviews for wind, solar, and transmission projects.</p>
@@ -504,8 +546,10 @@
 </section>
 
 <footer>
-  <div class="wrap">
-    APE Explorer · pilot dataset compiled July 2026 · Institute for Progress · Sources: public FERC, BOEM, and BLM review documents.
+  <div class="wrap site-foot">
+    <p class="brand">APE Explorer</p>
+    <p class="project">A project by the <a href="https://ifp.org/">Institute for Progress</a></p>
+    <p class="credit">Pilot dataset compiled July 2026 · Sources: public FERC, BOEM, and BLM review documents.</p>
   </div>
 </footer>
 
